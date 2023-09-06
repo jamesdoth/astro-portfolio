@@ -1,44 +1,52 @@
 ---
+import { Image } from 'astro:assets';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<div class="sky1">
-			<div class="h-full bg-gradient-to-t from-rose-400 to-violet-900"></div>
-		</div>
-		<div class="sky2">
-			<div class="h-full bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40%"></div>
-		</div>
-		<div class="sky3">
-			<div class="h-full bg-violet-600"></div>
-		</div>
-		<div class="sky4">
-			<div class="h-full bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95%"></div>
-		</div>
-	</body>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <meta name='viewport' content='width=device-width' />
+        <meta name='generator' content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body>
+        <div class='sky1'>
+            <div class='h-full bg-gradient-to-t from-rose-400 to-violet-900'>
+            </div>
+        </div>
+        <div class='sky2'>
+            <div
+                class='h-full bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40%'
+            >
+            </div>
+        </div>
+        <div class='sky3'>
+            <div class='h-full bg-violet-600'></div>
+        </div>
+        <div class='sky4'>
+            <div
+                class='h-full bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95%'
+            >
+            </div>
+        </div>
+    </body>
 </html>
 
 <style>
-	.sky1 {
-		height: 74.5vh
-	}
-	.sky2{
-		height: 2vh
-	}
-	.sky3{
-		height: 6vh
-	}
-	.sky4{
-		height: 17.5vh
-	}
-	.h-full {
-		filter: brightness(0.4)
-	}
+    .sky1 {
+        height: 74.5vh;
+    }
+    .sky2 {
+        height: 2vh;
+    }
+    .sky3 {
+        height: 6vh;
+    }
+    .sky4 {
+        height: 17.5vh;
+    }
+    .h-full {
+        filter: brightness(0.4);
+    }
 </style>
