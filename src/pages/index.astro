@@ -1,17 +1,26 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+import grass from "../images/GRASS.png";
 ---
 
-<html lang='en'>
+<html lang="en">
     <head>
-        <meta charset='utf-8' />
-        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-        <meta name='viewport' content='width=device-width' />
-        <meta name='generator' content={Astro.generator} />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
     </head>
     <body>
-        <div class='sky1'>
+        <!-- <div class='flex'>
+            <Image src={grass} alt='grass tile' />
+            <Image src={grass} alt='grass tile' />
+            <Image src={grass} alt='grass tile' />
+        </div> -->
+        <div class="h-48">
+            <div class="bg-grass h-full bg-repeat-x animated-grass"></div>
+        </div>
+        <!-- <div class='sky1'>
             <div class='h-full bg-gradient-to-t from-rose-400 to-violet-900'>
             </div>
         </div>
@@ -24,29 +33,43 @@ import { Image } from 'astro:assets';
         <div class='sky3'>
             <div class='h-full bg-violet-600'></div>
         </div>
+        
+
         <div class='sky4'>
             <div
                 class='h-full bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95%'
             >
             </div>
-        </div>
+        </div> -->
+        <style>
+            @keyframes moveRight {
+                0% {
+                    background-position: 0 0;
+                }
+                100% {
+                    background-position: 192px 0;
+                }
+            }
+
+            .animated-grass {
+                animation: moveRight 2.15s linear forwards infinite; /* Adjust the duration (5s) to control the speed of the animation */
+                animation-iteration-count: infinite;
+            }
+            /* .sky1 {
+                height: 74.5vh;
+            }
+            .sky2 {
+                height: 2vh;
+            }
+            .sky3 {
+                height: 6vh;
+            }
+            .sky4 {
+                height: 17.5vh;
+            }
+            .h-full {
+                filter: brightness(0.4);
+            } */
+        </style>
     </body>
 </html>
-
-<style>
-    .sky1 {
-        height: 74.5vh;
-    }
-    .sky2 {
-        height: 2vh;
-    }
-    .sky3 {
-        height: 6vh;
-    }
-    .sky4 {
-        height: 17.5vh;
-    }
-    .h-full {
-        filter: brightness(0.4);
-    }
-</style>

@@ -5,8 +5,8 @@ module.exports = {
             files: ["*.{js,jsx,ts,tsx,json,cjs,astro}"],
             options: {
                 parser: "astro",
-                jsxSingleQuote: true,
-                singleQuote: true,
+                jsxSingleQuote: false,
+                singleQuote: false,
                 tabWidth: 4,
             },
         },
