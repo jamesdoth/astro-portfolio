@@ -9,7 +9,8 @@ module.exports = {
 			animation: {
 				'move-right': 'moveRight 2.15s linear infinite',
 				'move-right2': 'moveRight2 12s linear infinite',
-				'spin-circle': 'spinCircle 12s linear infinite',
+				'spin-circle': 'spinCircle 20s linear infinite',
+				'spin-counter': 'spinCounter 20s linear infinite',
 			},
 			keyframes: {
 				moveRight: {
@@ -24,6 +25,10 @@ module.exports = {
 				'0%': { transform: 'rotate(0deg)' },
 				'100%': { transform: 'rotate(360deg)' },
 				},
+				spinCounter: {
+				'0%': { transform: 'rotate(0deg)' },
+				'100%': { transform: 'rotate(-360deg)' },
+				}
 			},
 		},
 	},
@@ -42,3 +47,12 @@ module.exports = {
                 animation: moveRight 2.15s linear forwards infinite;
                 animation-iteration-count: infinite;
             } */
+
+			// @keyframes rotateAroundCenter {
+			// 	0% {
+			// 		transform: rotate(0deg);
+			// 	}
+			// 	100% {
+			// 		transform: rotate(360deg);
+			// 	}
+        	// }
