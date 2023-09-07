@@ -1,8 +1,10 @@
 ---
 import { Image, getImage } from "astro:assets";
 import grass from "../images/GRASS.png";
+import clouds from "../images/CLOUDS.png";
 
 const grassTile = await getImage({ src: grass, format: "avif" });
+const cloudsTile = await getImage({ src: clouds, format: "avif" });
 ---
 
 <html lang="en">
@@ -28,6 +30,13 @@ const grassTile = await getImage({ src: grass, format: "avif" });
         </div>
         <div class="sky3">
             <div class="h-[6vh] bg-violet-600"></div>
+        </div>
+        <div class="flex">
+            <div
+                style=`background-image: url(${cloudsTile.src})`
+                class="absolute h-[384px] w-full -my-[475px] animate-move-right2"
+            >
+            </div>
         </div>
         <div class="flex">
             <div

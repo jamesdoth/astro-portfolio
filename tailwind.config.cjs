@@ -4,12 +4,17 @@ module.exports = {
 	theme: {
 		extend: {
 		animation: {
-			'move-right': 'moveRight 2.15s linear infinite', // Define the Tailwind CSS animation
+			'move-right': 'moveRight 2.15s linear infinite',
+			'move-right2': 'moveRight2 12s linear infinite',
 		},
 		keyframes: {
 			moveRight: {
-			'0%': { backgroundPosition: '0 0' }, // Define the keyframes
-			'100%': { backgroundPosition: '192px 0' }, // Define the keyframes
+			'0%': { backgroundPosition: '0 0' },
+			'100%': { backgroundPosition: '192px 0' },
+			},
+			moveRight2: {
+			'0%': { backgroundPosition: '0 0' },
+			'100%': { backgroundPosition: '768px 0' },
 			},
 		},
 		},
