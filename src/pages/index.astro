@@ -16,6 +16,27 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         <title>Astro</title>
     </head>
     <body>
+        <div
+            class="animation-container overflow-hidden absolute w-full h-screen"
+        >
+            <div
+                class="spin-parent absolute top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
+                <div
+                    class="spin w-24 h-24 bg-white rounded-full animate-spin-circle"
+                >
+                    <div
+                        class="moon absolute inline-block ml-[-35rem] w-24 h-24 bg-transparent shadow-moon-border rounded-full"
+                    >
+                    </div>
+                    <div
+                        class="sun absolute ml-[35rem] w-24 h-24 bg-white rounded-full"
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="sky1">
             <div
                 class="bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900"
@@ -51,6 +72,7 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             >
             </div>
         </div>
-        <style></style>
     </body>
+
+    <style></style>
 </html>
