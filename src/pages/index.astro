@@ -19,12 +19,12 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         <div
             class="animation-container overflow-hidden absolute w-full h-screen"
         >
-            <div class="spin-parent absolute flex top-[70%] left-1/2">
+            <div class="spin-parent absolute flex top-[75%] left-1/2 z-10">
                 <div
-                    class="spin w-24 h-24 bg-white rounded-full animate-spin-circle"
+                    class="spin w-24 h-24 bg-black rounded-full animate-spin-circle"
                 >
                     <div
-                        class="moon relative ml-[-35rem] w-24 h-24 bg-transparent shadow-moon-border rounded-full"
+                        class="moon relative ml-[-35rem] w-24 h-24 bg-transparent shadow-moon-border rounded-full animate-moon-rotation"
                     >
                     </div>
                     <div
@@ -34,51 +34,57 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                 </div>
             </div>
         </div>
-        <div
-            class="animation-container2 overflow-hidden absolute w-full h-screen"
-        >
-            <div class="spin-parent2 absolute top-[70%] left-1/2">
+
+        <div class="mx-auto">
+            <div
+                class="sky relative bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900 z-0"
+            >
+            </div>
+            <div
+                class="horizon relative h-[2vh] bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40% z-20"
+            >
+            </div>
+            <div
+                class="ocean relative h-[6vh] bg-violet-600 overflow-hidden z-20"
+            >
                 <div
-                    class="spin2 w-24 h-24 bg-white rounded-full animate-spin-counter"
+                    class="animation-container2 overflow-hidden absolute w-full h-screen"
                 >
-                    <div
-                        class="moon2 relative ml-[-35rem] w-24 h-24 bg-transparent shadow-moon-border rounded-full"
-                    >
-                    </div>
-                    <div
-                        class="sun2 relative ml-[35rem] bottom-[100%] w-24 h-24 bg-white rounded-full"
-                    >
+                    <div class="spin-parent2 absolute -top-[12%] flex left-1/2">
+                        <div
+                            class="spin2 w-24 h-24 bg-white rounded-full animate-spin-counter"
+                        >
+                            <div
+                                class="moon2 relative ml-[-35rem] w-24 h-24 bg-transparent shadow-moon-border rounded-full animate-moon-rotation2"
+                            >
+                            </div>
+                            <div
+                                class="sun2 relative ml-[35rem] bottom-[100%] w-24 h-24 bg-white rounded-full"
+                            >
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div
-            class="sky1 bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900"
-        >
-        </div>
-        <div
-            class="sky2 relative h-[2vh] bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40%"
-        >
-        </div>
-        <div class="sky3 relative h-[6vh] bg-violet-600 -z-10"></div>
-        <div class="flex">
+            <div class="flex">
+                <div
+                    style=`background-image: url(${cloudsTile.src})`
+                    class="flex relative h-[384px] w-full -my-[475px] animate-move-right2 z-30"
+                >
+                </div>
+            </div>
+            <div class="flex">
+                <div
+                    style=`background-image: url(${grassTile.src})`
+                    class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right z-30"
+                >
+                </div>
+            </div>
             <div
-                style=`background-image: url(${cloudsTile.src})`
-                class="flex relative h-[384px] w-full -my-[475px] animate-move-right2 z-20"
+                class="ground relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95% z-20"
             >
             </div>
-        </div>
-        <div class="flex">
-            <div
-                style=`background-image: url(${grassTile.src})`
-                class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right z-20"
-            >
-            </div>
-        </div>
-        <div
-            class="sky4 relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95%"
-        >
         </div>
     </body>
 

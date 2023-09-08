@@ -1,3 +1,4 @@
 tsconfig.json
 astro.config.mjs
 tailwind.config.cjs
+tailwind.css

@@ -9,8 +9,10 @@ module.exports = {
 			animation: {
 				'move-right': 'moveRight 2.15s linear infinite',
 				'move-right2': 'moveRight2 12s linear infinite',
-				'spin-circle': 'spinCircle 20s linear infinite',
-				'spin-counter': 'spinCounter 20s linear infinite',
+				'spin-circle': 'spinCircle 40s linear infinite',
+				'spin-counter': 'spinCounter 40s linear infinite',
+				'moon-rotation': 'spinCircle 40s linear infinite reverse',
+				'moon-rotation2': 'spinCounter 40s linear infinite reverse',
 			},
 			keyframes: {
 				moveRight: {
@@ -34,6 +36,7 @@ module.exports = {
 	},
 	plugins: [],
 }
+
             /* @keyframes moveRight {
                 0% {
                     background-position: 0 0;
