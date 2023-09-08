@@ -9,10 +9,10 @@ module.exports = {
 			animation: {
 				'move-right': 'moveRight 2.15s linear infinite',
 				'move-right2': 'moveRight2 12s linear infinite',
-				'spin-circle': 'spinCircle 40s linear infinite',
-				'spin-counter': 'spinCounter 40s linear infinite',
-				'moon-rotation': 'spinCircle 40s linear infinite reverse',
-				'moon-rotation2': 'spinCounter 40s linear infinite reverse',
+				'spin-circle': 'spinCircle 5s linear infinite',
+				'spin-counter': 'spinCounter 5s linear infinite',
+				'moon-rotation': 'spinCircle 5s linear infinite reverse',
+				'moon-rotation2': 'spinCounter 5s linear infinite reverse',
 			},
 			keyframes: {
 				moveRight: {
