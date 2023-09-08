@@ -15,94 +15,95 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
     </head>
-    <body>
+    <body class="overflow-hidden">
         <div class="mx-auto">
             <div
-                class="deform w-1/5 h-2/5 bg-black left-[40%] top-[15%] scale-x-[3] absolute rounded-full z-40 flex"
+                class="deform w-1/5 h-3/5 bg-transparent left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
             >
                 <div
-                    class="rotate overflow-hidden w-[100%] h-[100%] origin-center flex justify-start"
+                    class="rotate overflow-hidden w-[100%] h-100%] origin-center flex justify-start"
                 >
                     <div class="counterrotate w-[50px] h-[50px]">
                         <div
-                            class="inner w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.33]"
+                            class="inner w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.605] scale-y-[.55]"
                         >
                         </div>
                     </div>
                 </div>
             </div>
             <div
-                class="deform w-1/5 h-2/5 bg-slate-600 left-[40%] top-[15%] scale-x-[3] absolute rounded-full z-40 flex"
+                class="deform w-1/5 h-3/5 bg-transparent left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
             >
                 <div
-                    class="rotate overflow-hidden w-[100%] h-[100%] origin-center flex justify-end items-end"
+                    class="rotate w-[100%] h-[100%] origin-center flex justify-end items-end"
                 >
                     <div class="counterrotate absolute w-[50px] h-[50px]">
                         <div
-                            class="inner w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.33]"
+                            class="inner w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.605] scale-y-[.55]"
                         >
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div
+            <!-- <div
                 class="animation-container overflow-hidden absolute w-full h-screen"
             >
                 <div
                     class="spin-parent w-full h-full flex justify-center items-center absolute z-50 animate-spin-circle"
                 >
-                    <!-- z-10 -->
+                    z-10
                     <div
                         class="center absolute w-24 h-24 bg-black rounded-full"
                     >
-                        <!-- mt-[30rem] -->
+                        mt-[30rem]
                     </div>
                     <div
                         class="moon absolute w-24 h-24 left-[9%] bg-transparent shadow-moon-border rounded-full animate-moon-rotation"
                     >
-                        <!-- ml-[-10rem] sm:ml-[-15rem] md:ml-[-25rem] -->
+                        ml-[-10rem] sm:ml-[-15rem] md:ml-[-25rem]
                     </div>
                     <div
                         class="sun absolute w-24 h-24 right-[9%] bg-white rounded-full"
                     >
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div
-                class="sky relative bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900 z-0"
+                class="sky relative bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900 z-20"
             >
             </div>
             <div
-                class="horizon relative h-[2vh] bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40% z-20"
+                class="horizon relative h-[2vh] bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40% z-40"
             >
             </div>
 
-            <div class="ocean relative h-[6vh] bg-violet-600 z-40">
-                z-20 overflow-hidden
+            <div
+                class="ocean relative h-[6vh] bg-violet-600 overflow-hidden z-30"
+            >
                 <div
-                    class="deform w-1/5 h-[40vh] bg-black left-[30%] -top-[300%] scale-x-[3] absolute rounded-full z-40 flex"
+                    class="deform2 w-1/5 h-[60vh] bg-transparent left-[40%] -top-[555%] scale-x-[2.5] scale-y-[2] absolute rounded-full flex"
                 >
                     <div
-                        class="rotate overflow-hidden w-[100%] h-[100%] origin-center flex justify-start"
+                        class="rotate2 w-[100%] h-[100%] origin-center flex justify-start items-end"
                     >
-                        <div class="counterrotate w-[50px] h-[50px]">
+                        <div class="counterrotate2 relative w-[50px] h-[50px]">
                             <div
-                                class="inner w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.33]"
+                                class="inner2 w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.605] scale-y-[.55]"
                             >
                             </div>
                         </div>
                     </div>
                 </div>
                 <div
-                    class="deform w-1/5 h-[40vh] bg-slate-500 left-[30%] -top-[300%] scale-x-[3] absolute rounded-full z-40 flex"
+                    class="deform2 w-1/5 h-[60vh] bg-transparent left-[40%] -top-[555%] scale-x-[2.5] scale-y-[2] absolute rounded-full flex"
                 >
                     <div
-                        class="rotate overflow-hidden w-[100%] h-[100%] origin-center flex justify-end items-end"
+                        class="rotate2 w-[100%] h-[100%] origin-center flex justify-end"
                     >
-                        <div class="counterrotate absolute w-[50px] h-[50px]">
+                        <div class="counterrotate2 absolute w-[50px] h-[50px]">
                             <div
-                                class="inner w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.33]"
+                                class="inner2 w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.605] scale-y-[.55]"
                             >
                             </div>
                         </div>
@@ -132,19 +133,19 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             <div class="flex">
                 <div
                     style=`background-image: url(${cloudsTile.src})`
-                    class="flex relative h-[384px] w-full -my-[475px] animate-move-right2 z-30"
+                    class="flex relative h-[384px] w-full -my-[475px] animate-move-right2 z-50"
                 >
                 </div>
             </div>
             <div class="flex">
                 <div
                     style=`background-image: url(${grassTile.src})`
-                    class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right z-30"
+                    class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right z-50"
                 >
                 </div>
             </div>
             <div
-                class="ground relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95% z-20"
+                class="ground relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95% z-40"
             >
             </div>
         </div>
@@ -159,7 +160,7 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             animation: ccircle 20s infinite linear;
         }
 
-        /* @keyframes circle {
+        @keyframes circle {
             from {
                 transform: rotateZ(0deg);
             }
@@ -175,6 +176,32 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             to {
                 transform: rotateZ(0deg);
             }
-        } */
+        }
+
+        .rotate2 {
+            animation: circle2 20s infinite linear;
+        }
+
+        .counterrotate2 {
+            animation: ccircle2 20s infinite linear;
+        }
+
+        @keyframes circle2 {
+            from {
+                transform: rotateZ(360deg);
+            }
+            to {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes ccircle2 {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
     </style>
 </html>
