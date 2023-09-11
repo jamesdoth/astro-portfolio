@@ -4,22 +4,22 @@ module.exports = {
 	theme: {
 		extend: {
 			boxShadow: {
-      			'moon-border': 'inset -15px 0px 0px 10px #FFFFFF',
+      			'moon-border': 'inset -15px 0px 0px 10px #111111',
     		},
-			animation: {
-				'move-right': 'moveRight 2.15s linear infinite',
-				'move-right2': 'moveRight2 12s linear infinite',
-			},
-			keyframes: {
-				moveRight: {
-				'0%': { backgroundPosition: '0 0' },
-				'100%': { backgroundPosition: '192px 0' },
-				},
-				moveRight2: {
-				'0%': { backgroundPosition: '0 0' },
-				'100%': { backgroundPosition: '768px 0' },
-				},
-			},
+			// animation: {
+			// 	'move-right': 'moveRight 2.15s linear infinite',
+			// 	'move-right2': 'moveRight2 12s linear infinite',
+			// },
+			// keyframes: {
+			// 	moveRight: {
+			// 	'0%': { backgroundPosition: '0 0' },
+			// 	'100%': { backgroundPosition: '192px 0' },
+			// 	},
+			// 	moveRight2: {
+			// 	'0%': { backgroundPosition: '0 0' },
+			// 	'100%': { backgroundPosition: '768px 0' },
+			// 	},
+			// },
 		},
 	},
 	plugins: [],

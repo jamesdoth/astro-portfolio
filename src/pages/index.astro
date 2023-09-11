@@ -15,7 +15,275 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
     </head>
-    <body class="overflow-hidden">
+    <body class="">
+        <!-- <div class="mx-auto">
+            <div
+                class="deform w-1/5 h-3/5 bg-slate-500 left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
+            >
+                <div
+                    class="rotate overflow-hidden w-[100%] h-[100%] origin-center flex justify-start"
+                >
+                    <div class="counterrotate w-[50px] h-[50px]">
+                        <div
+                            class="inner w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.605] scale-y-[.55]"
+                        >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="deform w-1/5 h-3/5 bg-amber-500 left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
+            >
+                <div
+                    class="rotate w-[100%] h-[100%] origin-center flex justify-end items-end"
+                >
+                    <div class="counterrotate absolute w-[50px] h-[50px]">
+                        <div
+                            class="inner w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.605] scale-y-[.55]"
+                        >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="sky relative bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900 z-20"
+            >
+            </div>
+            <div
+                class="horizon relative h-[2vh] bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40% z-40"
+            >
+            </div>
+
+            <div class="ocean relative h-[6vh] bg-violet-600 z-30">
+                <div
+                    class="deform2 w-1/5 h-[60vh] bg-blue-800 left-[40%] -top-[555%] scale-x-[2.5] scale-y-[2] absolute rounded-full flex"
+                >
+                    <div
+                        class="rotate2 w-[100%] h-[100%] origin-center flex justify-start items-end"
+                    >
+                        <div class="counterrotate2 relative w-[50px] h-[50px]">
+                            <div
+                                class="inner2 w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.605] scale-y-[.55]"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="deform2 w-1/5 h-[60vh] bg-red-800 left-[40%] -top-[555%] scale-x-[2.5] scale-y-[2] absolute rounded-full flex"
+                >
+                    <div
+                        class="rotate2 w-[100%] h-[100%] origin-center flex justify-end"
+                    >
+                        <div class="counterrotate2 absolute w-[50px] h-[50px]">
+                            <div
+                                class="inner2 w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.605] scale-y-[.55]"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div
+                    style=`background-image: url(${cloudsTile.src})`
+                    class="flex relative h-[384px] w-full -my-[475px] animate-move-right2"
+                >
+                </div>
+            </div>
+            <div class="flex">
+                <div
+                    style=`background-image: url(${grassTile.src})`
+                    class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right"
+                >
+                </div>
+            </div>
+            <div
+                class="ground relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95%"
+            >
+            </div>
+        </div> -->
+        <!-- <div class="flex justify-center h-screen items-center bg-slate-500">
+            <div class="wrapper mx-auto bg-slate-200">
+                <div class="circle w-[50px] h-[50px] bg-black rounded-full">
+                </div>
+            </div>
+        </div> -->
+        <div class="h-screen bg-slate-500 flex">
+            <div class="deform">
+                <div class="rotate">
+                    <div class="counterrotate">
+                        <div class="inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .deform {
+                width: 55%;
+                height: 25%;
+                transform: scaleX(1.5) scaleY(3);
+                background-color: lightblue;
+                left: 22.5%;
+                position: absolute;
+                top: 40%;
+                border-radius: 50%;
+            }
+            .rotate {
+                width: 100%;
+                height: 100%;
+                animation: circle 10s infinite linear;
+                transform-origin: 50% 50%;
+            }
+            .counterrotate {
+                width: 50px;
+                height: 50px;
+                animation: ccircle 10s infinite linear;
+            }
+            .inner {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                background-color: red;
+                display: block;
+                transform: scaleX(0.66) scaleY(0.33);
+            }
+            @keyframes circle {
+                from {
+                    transform: rotateZ(0deg);
+                }
+                to {
+                    transform: rotateZ(360deg);
+                }
+            }
+            @keyframes ccircle {
+                from {
+                    transform: rotateZ(360deg);
+                }
+                to {
+                    transform: rotateZ(0deg);
+                }
+            }
+
+            /* .circle {
+                transform: translate(-600px);
+                animation: x-axis 8s infinite linear;
+            }
+            .wrapper {
+                transform: translateY(-200px);
+                animation: y-axis 3s infinite ease-in-out;
+            }
+            @keyframes x-axis {
+                50% {
+                    transform: translateX(600px);
+                }
+            }
+            @keyframes y-axis {
+                50% {
+                    transform: translateY(200px);
+                }
+            } */
+
+            /* .rotate {
+            animation: circle 5s infinite linear;
+        }
+
+        .counterrotate {
+            animation: ccircle 5s infinite linear;
+        }
+
+        @keyframes circle {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        @keyframes ccircle {
+            from {
+                transform: rotateZ(360deg);
+            }
+            to {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        .rotate2 {
+            animation: circle2 5s infinite linear;
+        }
+
+        .counterrotate2 {
+            animation: ccircle2 5s infinite linear;
+        }
+
+        @keyframes circle2 {
+            from {
+                transform: rotateZ(360deg);
+            }
+            to {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes ccircle2 {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        } */
+        </style>
+    </body>
+    <!-- <div
+                class="animation-container overflow-hidden absolute w-full h-screen"
+            >
+                <div
+                    class="spin-parent w-full h-full flex justify-center items-center absolute z-50 animate-spin-circle"
+                >
+                    z-10
+                    <div
+                        class="center absolute w-24 h-24 bg-black rounded-full"
+                    >
+                        mt-[30rem]
+                    </div>
+                    <div
+                        class="moon absolute w-24 h-24 left-[9%] bg-transparent shadow-moon-border rounded-full animate-moon-rotation"
+                    >
+                        ml-[-10rem] sm:ml-[-15rem] md:ml-[-25rem]
+                    </div>
+                    <div
+                        class="sun absolute w-24 h-24 right-[9%] bg-white rounded-full"
+                    >
+                    </div>
+                </div>
+            </div> -->
+    <!-- <div
+                    class="animation-container2 overflow-hidden absolute w-full h-screen"
+                >
+                    <div class="spin-parent2 absolute -top-[5%] flex left-1/2">
+                        -top-[12%]
+                        <div
+                            class="spin2 w-24 h-24 bg-white rounded-full animate-spin-counter"
+                        >
+                            <div
+                                class="moon2 relative ml-[-35rem] w-24 h-24 bg-transparent shadow-moon-border rounded-full animate-moon-rotation2"
+                            >
+                            </div>
+                            <div
+                                class="sun2 relative ml-[35rem] bottom-[100%] w-24 h-24 bg-white rounded-full"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+    <!-- <body class="overflow-hidden">
         <div class="mx-auto">
             <div
                 class="deform w-1/5 h-3/5 bg-transparent left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
@@ -46,29 +314,6 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                 </div>
             </div>
 
-            <!-- <div
-                class="animation-container overflow-hidden absolute w-full h-screen"
-            >
-                <div
-                    class="spin-parent w-full h-full flex justify-center items-center absolute z-50 animate-spin-circle"
-                >
-                    z-10
-                    <div
-                        class="center absolute w-24 h-24 bg-black rounded-full"
-                    >
-                        mt-[30rem]
-                    </div>
-                    <div
-                        class="moon absolute w-24 h-24 left-[9%] bg-transparent shadow-moon-border rounded-full animate-moon-rotation"
-                    >
-                        ml-[-10rem] sm:ml-[-15rem] md:ml-[-25rem]
-                    </div>
-                    <div
-                        class="sun absolute w-24 h-24 right-[9%] bg-white rounded-full"
-                    >
-                    </div>
-                </div>
-            </div> -->
             <div
                 class="sky relative bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900 z-20"
             >
@@ -109,25 +354,6 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                         </div>
                     </div>
                 </div>
-                <!-- <div
-                    class="animation-container2 overflow-hidden absolute w-full h-screen"
-                >
-                    <div class="spin-parent2 absolute -top-[5%] flex left-1/2">
-                        -top-[12%]
-                        <div
-                            class="spin2 w-24 h-24 bg-white rounded-full animate-spin-counter"
-                        >
-                            <div
-                                class="moon2 relative ml-[-35rem] w-24 h-24 bg-transparent shadow-moon-border rounded-full animate-moon-rotation2"
-                            >
-                            </div>
-                            <div
-                                class="sun2 relative ml-[35rem] bottom-[100%] w-24 h-24 bg-white rounded-full"
-                            >
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
 
             <div class="flex">
@@ -149,59 +375,5 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             >
             </div>
         </div>
-    </body>
-
-    <style>
-        .rotate {
-            animation: circle 20s infinite linear;
-        }
-
-        .counterrotate {
-            animation: ccircle 20s infinite linear;
-        }
-
-        @keyframes circle {
-            from {
-                transform: rotateZ(0deg);
-            }
-            to {
-                transform: rotateZ(360deg);
-            }
-        }
-
-        @keyframes ccircle {
-            from {
-                transform: rotateZ(360deg);
-            }
-            to {
-                transform: rotateZ(0deg);
-            }
-        }
-
-        .rotate2 {
-            animation: circle2 20s infinite linear;
-        }
-
-        .counterrotate2 {
-            animation: ccircle2 20s infinite linear;
-        }
-
-        @keyframes circle2 {
-            from {
-                transform: rotateZ(360deg);
-            }
-            to {
-                transform: rotateZ(0deg);
-            }
-        }
-
-        @keyframes ccircle2 {
-            from {
-                transform: rotateZ(0deg);
-            }
-            to {
-                transform: rotateZ(360deg);
-            }
-        }
-    </style>
+    </body> -->
 </html>
