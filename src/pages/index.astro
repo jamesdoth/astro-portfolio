@@ -111,9 +111,9 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                 </div>
             </div>
         </div> -->
-        <div class="h-screen bg-slate-500 flex">
+        <div class="h-screen w-screen bg-slate-500 relative">
             <div class="deform">
-                <div class="rotate">
+                <div class="rotate flex justify-center">
                     <div class="counterrotate">
                         <div class="inner"></div>
                     </div>
@@ -123,33 +123,37 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
 
         <style>
             .deform {
-                width: 55%;
-                height: 25%;
-                transform: scaleX(1.5) scaleY(3);
+                width: 50%;
+                height: 70%;
+                transform: scaleX(80%) scaleY(80%);
                 background-color: lightblue;
-                left: 22.5%;
+                left: 25%;
                 position: absolute;
-                top: 40%;
+                top: 15%;
                 border-radius: 50%;
             }
             .rotate {
+                background-color: blue;
                 width: 100%;
                 height: 100%;
-                animation: circle 10s infinite linear;
+                animation: circle 5s infinite linear;
                 transform-origin: 50% 50%;
             }
             .counterrotate {
-                width: 50px;
-                height: 50px;
-                animation: ccircle 10s infinite linear;
+                background-color: black;
+                left: 10%;
+                top: 10%;
+                width: 10vh;
+                height: 10vh;
+                animation: ccircle 5s infinite linear;
             }
             .inner {
-                width: 50px;
-                height: 50px;
+                width: 10vh;
+                height: 10vh;
                 position: absolute;
                 background-color: red;
                 display: block;
-                transform: scaleX(0.66) scaleY(0.33);
+                transform: scaleX(0.33rem);
             }
             @keyframes circle {
                 from {
