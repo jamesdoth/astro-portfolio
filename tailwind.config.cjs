@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			boxShadow: {
-      			'moon-border': 'inset -15px 0px 0px 10px #111111',
+      			'moon-border': 'inset -15px 0px 0px 10px #FFFFFF',
     		},
 			// animation: {
 			// 	'move-right': 'moveRight 2.15s linear infinite',

@@ -116,37 +116,78 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             </div>
         </div> -->
         <div class="flex justify-center h-screen items-center bg-slate-500">
-            <!-- <div
-                class="wrapper-1 bg-slate-200 w-screen rounded-full flex justify-center"
-            >
-                <div class="wrapper-2 bg-blue-500 w-[50%] h-[15%]">
-                    <div class="circle w-[15vh] h-[15vh] bg-black rounded-full">
-                    </div>
-                </div> -->
-            <div class="absolute w-72 h-72 bg-emerald-700 rotate-45"></div>
             <div
-                class="circle absolute w-[15vh] h-[15vh] bg-black rounded-full"
+                class="moon absolute w-[15vh] h-[15vh] bg-transparent shadow-moon-border rounded-full"
             >
+            </div>
+            <div class="sun absolute w-[15vh] h-[15vh] bg-white rounded-full">
             </div>
         </div>
 
         <style>
-            .circle {
-                animation: circle 4s linear infinite;
+            .moon {
+                animation: moon 80s linear infinite;
             }
-            @keyframes circle {
+            .sun {
+                animation: sun 80s linear infinite;
+            }
+            @keyframes moon {
                 0% {
-                    /* transform: translateX(-25vw); */
+                    transform: translateX(-40vw) translateY(0vh);
                 }
-                /* 25% {
-                    transform: translateX(40vw) translateY(-65vh);
+                12.5% {
+                    transform: translateX(-27.5vw) translateY(-31.25vh);
+                }
+                25% {
+                    transform: translateX(0vw) translateY(-42.5vh);
+                }
+                37.5% {
+                    transform: translateX(27.5vw) translateY(-31.25vh);
                 }
                 50% {
-                    transform: translateX(65vw) translateY(0vh);
+                    transform: translateX(40vw) translateY(0vh);
+                }
+                62.5% {
+                    transform: translateX(27.5vw) translateY(31.25vh);
                 }
                 75% {
-                    transform: translateX(40vw) translateY(65vh);
-                } */
+                    transform: translateX(0vw) translateY(42.5vh);
+                }
+                87.5% {
+                    transform: translateX(-27.5vw) translateY(31.25vh);
+                }
+                100% {
+                    transform: translateX(-40vw) translateY(0vh);
+                }
+            }
+            @keyframes sun {
+                0% {
+                    transform: translateX(40vw) translateY(0vh);
+                }
+                12.5% {
+                    transform: translateX(27.5vw) translateY(31.25vh);
+                }
+                25% {
+                    transform: translateX(0vw) translateY(42.5vh);
+                }
+                37.5% {
+                    transform: translateX(-27.5vw) translateY(31.25vh);
+                }
+                50% {
+                    transform: translateX(-40vw) translateY(0vh);
+                }
+                62.5% {
+                    transform: translateX(-27.5vw) translateY(-31.25vh);
+                }
+                75% {
+                    transform: translateX(0vw) translateY(-42.5vh);
+                }
+                87.5% {
+                    transform: translateX(27.5vw) translateY(-31.25vh);
+                }
+                100% {
+                    transform: translateX(40vw) translateY(0vh);
+                }
             }
             /* .wrapper-1 {
                 animation: y-axis 5s linear infinite;
