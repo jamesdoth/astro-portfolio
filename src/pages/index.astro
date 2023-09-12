@@ -105,13 +105,8 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             >
             </div>
         </div> -->
-        <!-- <div class="flex justify-center h-screen items-center bg-slate-500">
-            <div class="wrapper mx-auto bg-slate-200">
-                <div class="circle w-[50px] h-[50px] bg-black rounded-full">
-                </div>
-            </div>
-        </div> -->
-        <div class="h-screen w-screen bg-slate-500 relative">
+
+        <!-- <div class="h-screen w-screen bg-slate-500 relative">
             <div class="deform">
                 <div class="rotate flex justify-center">
                     <div class="counterrotate">
@@ -119,10 +114,79 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                     </div>
                 </div>
             </div>
+        </div> -->
+        <div class="flex justify-center h-screen items-center bg-slate-500">
+            <!-- <div
+                class="wrapper-1 bg-slate-200 w-screen rounded-full flex justify-center"
+            >
+                <div class="wrapper-2 bg-blue-500 w-[50%] h-[15%]">
+                    <div class="circle w-[15vh] h-[15vh] bg-black rounded-full">
+                    </div>
+                </div> -->
+            <div class="absolute w-72 h-72 bg-emerald-700 rotate-45"></div>
+            <div
+                class="circle absolute w-[15vh] h-[15vh] bg-black rounded-full"
+            >
+            </div>
         </div>
 
         <style>
-            .deform {
+            .circle {
+                animation: circle 4s linear infinite;
+            }
+            @keyframes circle {
+                0% {
+                    /* transform: translateX(-25vw); */
+                }
+                /* 25% {
+                    transform: translateX(40vw) translateY(-65vh);
+                }
+                50% {
+                    transform: translateX(65vw) translateY(0vh);
+                }
+                75% {
+                    transform: translateX(40vw) translateY(65vh);
+                } */
+            }
+            /* .wrapper-1 {
+                animation: y-axis 5s linear infinite;
+            }
+            @keyframes y-axis {
+                    0% {
+                        transform: translateY(0px);
+                    }
+                    25% {
+                        transform: translateY(100px);
+                    }
+                    75% {
+                        transform: translateY(-100px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+            .wrapper-2 {
+                animation: x-axis 5s linear infinite;
+            }
+            @keyframes x-axis {
+                    0% {
+                        transform: rotateZ(0deg);
+                    }
+                    20% {
+                        transform: rotateZ(90deg);
+                    }
+                    40% {
+                        transform: rotateZ(180deg);
+                    }
+                    60% {
+                        transform: rotateZ(270deg);
+                    }
+                    100% {
+                        transform: rotateZ(360deg);
+                    }
+                } */
+
+            /* .deform {
                 width: 50%;
                 height: 70%;
                 transform: scaleX(80%) scaleY(80%);
@@ -169,25 +233,6 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                 }
                 to {
                     transform: rotateZ(0deg);
-                }
-            }
-
-            /* .circle {
-                transform: translate(-600px);
-                animation: x-axis 8s infinite linear;
-            }
-            .wrapper {
-                transform: translateY(-200px);
-                animation: y-axis 3s infinite ease-in-out;
-            }
-            @keyframes x-axis {
-                50% {
-                    transform: translateX(600px);
-                }
-            }
-            @keyframes y-axis {
-                50% {
-                    transform: translateY(200px);
                 }
             } */
 
