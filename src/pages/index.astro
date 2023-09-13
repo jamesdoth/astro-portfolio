@@ -15,34 +15,18 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
     </head>
-    <body class="">
-        <!-- <div class="mx-auto">
+    <body class="overflow-hidden">
+        <div class="mx-auto">
             <div
-                class="deform w-1/5 h-3/5 bg-slate-500 left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
+                class="absolute h-screen w-screen flex justify-center items-center z-30"
             >
                 <div
-                    class="rotate overflow-hidden w-[100%] h-[100%] origin-center flex justify-start"
+                    class="moon absolute w-[15vh] h-[15vh] bg-transparent shadow-moon-border rounded-full"
                 >
-                    <div class="counterrotate w-[50px] h-[50px]">
-                        <div
-                            class="inner w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.605] scale-y-[.55]"
-                        >
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <div
-                class="deform w-1/5 h-3/5 bg-amber-500 left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
-            >
                 <div
-                    class="rotate w-[100%] h-[100%] origin-center flex justify-end items-end"
+                    class="sun absolute w-[15vh] h-[15vh] bg-white rounded-full"
                 >
-                    <div class="counterrotate absolute w-[50px] h-[50px]">
-                        <div
-                            class="inner w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.605] scale-y-[.55]"
-                        >
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -55,33 +39,19 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             >
             </div>
 
-            <div class="ocean relative h-[6vh] bg-violet-600 z-30">
+            <div
+                class="ocean overflow-hidden relative h-[6vh] bg-violet-600 z-30"
+            >
                 <div
-                    class="deform2 w-1/5 h-[60vh] bg-blue-800 left-[40%] -top-[555%] scale-x-[2.5] scale-y-[2] absolute rounded-full flex"
+                    class="absolute h-screen w-screen -top-[1760%] flex justify-center items-center"
                 >
                     <div
-                        class="rotate2 w-[100%] h-[100%] origin-center flex justify-start items-end"
+                        class="moon2 absolute w-[15vh] h-[15vh] bg-transparent shadow-moon-border rounded-full"
                     >
-                        <div class="counterrotate2 relative w-[50px] h-[50px]">
-                            <div
-                                class="inner2 w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.605] scale-y-[.55]"
-                            >
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div
-                    class="deform2 w-1/5 h-[60vh] bg-red-800 left-[40%] -top-[555%] scale-x-[2.5] scale-y-[2] absolute rounded-full flex"
-                >
                     <div
-                        class="rotate2 w-[100%] h-[100%] origin-center flex justify-end"
+                        class="sun2 absolute w-[15vh] h-[15vh] bg-white rounded-full"
                     >
-                        <div class="counterrotate2 absolute w-[50px] h-[50px]">
-                            <div
-                                class="inner2 w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.605] scale-y-[.55]"
-                            >
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -89,104 +59,488 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             <div class="flex">
                 <div
                     style=`background-image: url(${cloudsTile.src})`
-                    class="flex relative h-[384px] w-full -my-[475px] animate-move-right2"
+                    class="flex relative h-[384px] w-full -my-[475px] animate-move-right2 z-50"
                 >
                 </div>
             </div>
             <div class="flex">
                 <div
                     style=`background-image: url(${grassTile.src})`
-                    class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right"
+                    class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right z-50"
                 >
                 </div>
             </div>
             <div
-                class="ground relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95%"
+                class="ground relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95% z-40"
             >
-            </div>
-        </div> -->
-
-        <!-- <div class="h-screen w-screen bg-slate-500 relative">
-            <div class="deform">
-                <div class="rotate flex justify-center">
-                    <div class="counterrotate">
-                        <div class="inner"></div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="flex justify-center h-screen items-center bg-slate-500">
-            <div
-                class="moon absolute w-[15vh] h-[15vh] bg-transparent shadow-moon-border rounded-full"
-            >
-            </div>
-            <div class="sun absolute w-[15vh] h-[15vh] bg-white rounded-full">
             </div>
         </div>
 
         <style>
             .moon {
-                animation: moon 80s linear infinite;
+                animation: moon 12s linear infinite;
             }
             .sun {
-                animation: sun 80s linear infinite;
+                animation: sun 12s linear infinite;
+            }
+            .moon2 {
+                animation: moon2 12s linear infinite reverse;
+            }
+            .sun2 {
+                animation: sun2 12s linear infinite reverse;
             }
             @keyframes moon {
                 0% {
-                    transform: translateX(-40vw) translateY(0vh);
+                    transform: translateX(-40vw) translateY(40vh);
                 }
-                12.5% {
-                    transform: translateX(-27.5vw) translateY(-31.25vh);
+                2.7777% {
+                    transform: translateX(-39vw) translateY(29vh);
                 }
-                25% {
-                    transform: translateX(0vw) translateY(-42.5vh);
+                5.5554% {
+                    transform: translateX(-37.5vw) translateY(19vh);
                 }
-                37.5% {
-                    transform: translateX(27.5vw) translateY(-31.25vh);
+                8.3331% {
+                    transform: translateX(-36vw) translateY(8.5vh);
                 }
-                50% {
-                    transform: translateX(40vw) translateY(0vh);
+                11.1108% {
+                    transform: translateX(-35vw) translateY(-1vh);
                 }
-                62.5% {
-                    transform: translateX(27.5vw) translateY(31.25vh);
+                13.8885% {
+                    transform: translateX(-33vw) translateY(-12vh);
                 }
-                75% {
-                    transform: translateX(0vw) translateY(42.5vh);
+                16.6662% {
+                    transform: translateX(-29vw) translateY(-23vh);
                 }
-                87.5% {
-                    transform: translateX(-27.5vw) translateY(31.25vh);
+                19.4439% {
+                    transform: translateX(-22vw) translateY(-33.5vh);
+                }
+                22.2216% {
+                    transform: translateX(-12vw) translateY(-37vh);
+                }
+                24.9993% {
+                    transform: translateX(0vw) translateY(-40vh);
+                }
+                27.777% {
+                    transform: translateX(12vw) translateY(-37vh);
+                }
+                30.5547% {
+                    transform: translateX(22vw) translateY(-33.5vh);
+                }
+                33.3324% {
+                    transform: translateX(29vw) translateY(-23vh);
+                }
+                36.1101% {
+                    transform: translateX(33vw) translateY(-12vh);
+                }
+                38.8878% {
+                    transform: translateX(35vw) translateY(-1vh);
+                }
+                41.6655% {
+                    transform: translateX(36vw) translateY(8.5vh);
+                }
+                44.4432% {
+                    transform: translateX(37.5vw) translateY(19vh);
+                }
+                47.2209% {
+                    transform: translateX(39vw) translateY(29vh);
+                }
+                49.9986% {
+                    transform: translateX(40vw) translateY(40vh);
+                }
+                52.7763% {
+                    transform: translateX(39vw) translateY(51vh);
+                }
+                55.554% {
+                    transform: translateX(37.5vw) translateY(61vh);
+                }
+                58.3317% {
+                    transform: translateX(36vw) translateY(71.5vh);
+                }
+                61.1094% {
+                    transform: translateX(35vw) translateY(80vh);
+                }
+                63.8871% {
+                    transform: translateX(33vw) translateY(91vh);
+                }
+                66.6648% {
+                    transform: translateX(29vw) translateY(102vh);
+                }
+                69.4425% {
+                    transform: translateX(22vw) translateY(112.5vh);
+                }
+                72.2202% {
+                    transform: translateX(12vw) translateY(116vh);
+                }
+                74.9979% {
+                    transform: translateX(0vw) translateY(120vh);
+                }
+                77.7756% {
+                    transform: translateX(-12vw) translateY(116vh);
+                }
+                80.5533% {
+                    transform: translateX(-22vw) translateY(112.5vh);
+                }
+                83.331% {
+                    transform: translateX(-29vw) translateY(102vh);
+                }
+                86.1087% {
+                    transform: translateX(-33vw) translateY(91vh);
+                }
+                88.8864% {
+                    transform: translateX(-35vw) translateY(80vh);
+                }
+                91.6641% {
+                    transform: translateX(-36vw) translateY(71.5vh);
+                }
+                94.4418% {
+                    transform: translateX(-37.5vw) translateY(61vh);
+                }
+                97.2195% {
+                    transform: translateX(-39vw) translateY(51vh);
                 }
                 100% {
-                    transform: translateX(-40vw) translateY(0vh);
+                    transform: translateX(-40vw) translateY(40vh);
                 }
             }
+
             @keyframes sun {
                 0% {
-                    transform: translateX(40vw) translateY(0vh);
+                    transform: translateX(40vw) translateY(40vh);
                 }
-                12.5% {
-                    transform: translateX(27.5vw) translateY(31.25vh);
+                2.7777% {
+                    transform: translateX(39vw) translateY(51vh);
                 }
-                25% {
-                    transform: translateX(0vw) translateY(42.5vh);
+                5.5554% {
+                    transform: translateX(37.5vw) translateY(61vh);
                 }
-                37.5% {
-                    transform: translateX(-27.5vw) translateY(31.25vh);
+                8.3331% {
+                    transform: translateX(36vw) translateY(71.5vh);
                 }
-                50% {
-                    transform: translateX(-40vw) translateY(0vh);
+                11.1108% {
+                    transform: translateX(35vw) translateY(80vh);
                 }
-                62.5% {
-                    transform: translateX(-27.5vw) translateY(-31.25vh);
+                13.8885% {
+                    transform: translateX(33vw) translateY(91vh);
                 }
-                75% {
-                    transform: translateX(0vw) translateY(-42.5vh);
+                16.6662% {
+                    transform: translateX(29vw) translateY(102vh);
                 }
-                87.5% {
-                    transform: translateX(27.5vw) translateY(-31.25vh);
+                19.4439% {
+                    transform: translateX(22vw) translateY(112.5vh);
+                }
+                22.2216% {
+                    transform: translateX(12vw) translateY(116vh);
+                }
+                24.9993% {
+                    transform: translateX(0vw) translateY(120vh);
+                }
+                27.777% {
+                    transform: translateX(-12vw) translateY(116vh);
+                }
+                30.5547% {
+                    transform: translateX(-22vw) translateY(112.5vh);
+                }
+                33.3324% {
+                    transform: translateX(-29vw) translateY(102vh);
+                }
+                36.1101% {
+                    transform: translateX(-33vw) translateY(91vh);
+                }
+                38.8878% {
+                    transform: translateX(-35vw) translateY(80vh);
+                }
+                41.6655% {
+                    transform: translateX(-36vw) translateY(71.5vh);
+                }
+                44.4432% {
+                    transform: translateX(-37.5vw) translateY(61vh);
+                }
+                47.2209% {
+                    transform: translateX(-39vw) translateY(51vh);
+                }
+                49.9986% {
+                    transform: translateX(-40vw) translateY(40vh);
+                }
+                52.7763% {
+                    transform: translateX(-39vw) translateY(29vh);
+                }
+                55.554% {
+                    transform: translateX(-37.5vw) translateY(19vh);
+                }
+                58.3317% {
+                    transform: translateX(-36vw) translateY(8.5vh);
+                }
+                61.1094% {
+                    transform: translateX(-35vw) translateY(-1vh);
+                }
+                63.8871% {
+                    transform: translateX(-33vw) translateY(-12vh);
+                }
+                66.6648% {
+                    transform: translateX(-29vw) translateY(-23vh);
+                }
+                69.4425% {
+                    transform: translateX(-22vw) translateY(-33.5vh);
+                }
+                72.2202% {
+                    transform: translateX(-12vw) translateY(-37vh);
+                }
+                74.9979% {
+                    transform: translateX(0vw) translateY(-40vh);
+                }
+                77.7756% {
+                    transform: translateX(12vw) translateY(-37vh);
+                }
+                80.5533% {
+                    transform: translateX(22vw) translateY(-33.5vh);
+                }
+                83.331% {
+                    transform: translateX(29vw) translateY(-23vh);
+                }
+                86.1087% {
+                    transform: translateX(33vw) translateY(-12vh);
+                }
+                88.8864% {
+                    transform: translateX(35vw) translateY(-1vh);
+                }
+                91.6641% {
+                    transform: translateX(36vw) translateY(8.5vh);
+                }
+                94.4418% {
+                    transform: translateX(37.5vw) translateY(19vh);
+                }
+                97.2195% {
+                    transform: translateX(39vw) translateY(29vh);
                 }
                 100% {
-                    transform: translateX(40vw) translateY(0vh);
+                    transform: translateX(40vw) translateY(40vh);
+                }
+            }
+
+            @keyframes moon2 {
+                0% {
+                    transform: translateX(-40vw) translateY(40vh);
+                }
+                2.7777% {
+                    transform: translateX(-39vw) translateY(29vh);
+                }
+                5.5554% {
+                    transform: translateX(-37.5vw) translateY(19vh);
+                }
+                8.3331% {
+                    transform: translateX(-36vw) translateY(8.5vh);
+                }
+                11.1108% {
+                    transform: translateX(-35vw) translateY(-1vh);
+                }
+                13.8885% {
+                    transform: translateX(-33vw) translateY(-12vh);
+                }
+                16.6662% {
+                    transform: translateX(-29vw) translateY(-23vh);
+                }
+                19.4439% {
+                    transform: translateX(-22vw) translateY(-33.5vh);
+                }
+                22.2216% {
+                    transform: translateX(-12vw) translateY(-37vh);
+                }
+                24.9993% {
+                    transform: translateX(0vw) translateY(-40vh);
+                }
+                27.777% {
+                    transform: translateX(12vw) translateY(-37vh);
+                }
+                30.5547% {
+                    transform: translateX(22vw) translateY(-33.5vh);
+                }
+                33.3324% {
+                    transform: translateX(29vw) translateY(-23vh);
+                }
+                36.1101% {
+                    transform: translateX(33vw) translateY(-12vh);
+                }
+                38.8878% {
+                    transform: translateX(35vw) translateY(-1vh);
+                }
+                41.6655% {
+                    transform: translateX(36vw) translateY(8.5vh);
+                }
+                44.4432% {
+                    transform: translateX(37.5vw) translateY(19vh);
+                }
+                47.2209% {
+                    transform: translateX(39vw) translateY(29vh);
+                }
+                49.9986% {
+                    transform: translateX(40vw) translateY(40vh);
+                }
+                52.7763% {
+                    transform: translateX(39vw) translateY(51vh);
+                }
+                55.554% {
+                    transform: translateX(37.5vw) translateY(61vh);
+                }
+                58.3317% {
+                    transform: translateX(36vw) translateY(71.5vh);
+                }
+                61.1094% {
+                    transform: translateX(35vw) translateY(80vh);
+                }
+                63.8871% {
+                    transform: translateX(33vw) translateY(91vh);
+                }
+                66.6648% {
+                    transform: translateX(29vw) translateY(102vh);
+                }
+                69.4425% {
+                    transform: translateX(22vw) translateY(112.5vh);
+                }
+                72.2202% {
+                    transform: translateX(12vw) translateY(116vh);
+                }
+                74.9979% {
+                    transform: translateX(0vw) translateY(120vh);
+                }
+                77.7756% {
+                    transform: translateX(-12vw) translateY(116vh);
+                }
+                80.5533% {
+                    transform: translateX(-22vw) translateY(112.5vh);
+                }
+                83.331% {
+                    transform: translateX(-29vw) translateY(102vh);
+                }
+                86.1087% {
+                    transform: translateX(-33vw) translateY(91vh);
+                }
+                88.8864% {
+                    transform: translateX(-35vw) translateY(80vh);
+                }
+                91.6641% {
+                    transform: translateX(-36vw) translateY(71.5vh);
+                }
+                94.4418% {
+                    transform: translateX(-37.5vw) translateY(61vh);
+                }
+                97.2195% {
+                    transform: translateX(-39vw) translateY(51vh);
+                }
+                100% {
+                    transform: translateX(-40vw) translateY(40vh);
+                }
+            }
+            @keyframes sun2 {
+                0% {
+                    transform: translateX(40vw) translateY(40vh);
+                }
+                2.7777% {
+                    transform: translateX(39vw) translateY(51vh);
+                }
+                5.5554% {
+                    transform: translateX(37.5vw) translateY(61vh);
+                }
+                8.3331% {
+                    transform: translateX(36vw) translateY(71.5vh);
+                }
+                11.1108% {
+                    transform: translateX(35vw) translateY(80vh);
+                }
+                13.8885% {
+                    transform: translateX(33vw) translateY(91vh);
+                }
+                16.6662% {
+                    transform: translateX(29vw) translateY(102vh);
+                }
+                19.4439% {
+                    transform: translateX(22vw) translateY(112.5vh);
+                }
+                22.2216% {
+                    transform: translateX(12vw) translateY(116vh);
+                }
+                24.9993% {
+                    transform: translateX(0vw) translateY(120vh);
+                }
+                27.777% {
+                    transform: translateX(-12vw) translateY(116vh);
+                }
+                30.5547% {
+                    transform: translateX(-22vw) translateY(112.5vh);
+                }
+                33.3324% {
+                    transform: translateX(-29vw) translateY(102vh);
+                }
+                36.1101% {
+                    transform: translateX(-33vw) translateY(91vh);
+                }
+                38.8878% {
+                    transform: translateX(-35vw) translateY(80vh);
+                }
+                41.6655% {
+                    transform: translateX(-36vw) translateY(71.5vh);
+                }
+                44.4432% {
+                    transform: translateX(-37.5vw) translateY(61vh);
+                }
+                47.2209% {
+                    transform: translateX(-39vw) translateY(51vh);
+                }
+                49.9986% {
+                    transform: translateX(-40vw) translateY(40vh);
+                }
+                52.7763% {
+                    transform: translateX(-39vw) translateY(29vh);
+                }
+                55.554% {
+                    transform: translateX(-37.5vw) translateY(19vh);
+                }
+                58.3317% {
+                    transform: translateX(-36vw) translateY(8.5vh);
+                }
+                61.1094% {
+                    transform: translateX(-35vw) translateY(-1vh);
+                }
+                63.8871% {
+                    transform: translateX(-33vw) translateY(-12vh);
+                }
+                66.6648% {
+                    transform: translateX(-29vw) translateY(-23vh);
+                }
+                69.4425% {
+                    transform: translateX(-22vw) translateY(-33.5vh);
+                }
+                72.2202% {
+                    transform: translateX(-12vw) translateY(-37vh);
+                }
+                74.9979% {
+                    transform: translateX(0vw) translateY(-40vh);
+                }
+                77.7756% {
+                    transform: translateX(12vw) translateY(-37vh);
+                }
+                80.5533% {
+                    transform: translateX(22vw) translateY(-33.5vh);
+                }
+                83.331% {
+                    transform: translateX(29vw) translateY(-23vh);
+                }
+                86.1087% {
+                    transform: translateX(33vw) translateY(-12vh);
+                }
+                88.8864% {
+                    transform: translateX(35vw) translateY(-1vh);
+                }
+                91.6641% {
+                    transform: translateX(36vw) translateY(8.5vh);
+                }
+                94.4418% {
+                    transform: translateX(37.5vw) translateY(19vh);
+                }
+                97.2195% {
+                    transform: translateX(39vw) translateY(29vh);
+                }
+                100% {
+                    transform: translateX(40vw) translateY(40vh);
                 }
             }
             /* .wrapper-1 {
@@ -330,6 +684,15 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         } */
         </style>
     </body>
+    <!-- <div class="h-screen w-screen bg-slate-500 relative">
+            <div class="deform">
+                <div class="rotate flex justify-center">
+                    <div class="counterrotate">
+                        <div class="inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     <!-- <div
                 class="animation-container overflow-hidden absolute w-full h-screen"
             >
