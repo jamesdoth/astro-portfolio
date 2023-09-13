@@ -15,8 +15,8 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
     </head>
-    <body class="overflow-hidden">
-        <div class="mx-auto">
+    <body class="overflow-hidden bg-zinc-900">
+        <div class="container1 mx-auto">
             <div
                 class="absolute h-screen w-screen flex justify-center items-center z-30"
             >
@@ -59,14 +59,14 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             <div class="flex">
                 <div
                     style=`background-image: url(${cloudsTile.src})`
-                    class="flex relative h-[384px] w-full -my-[475px] animate-move-right2 z-50"
+                    class="flex absolute h-[50vh] w-full -my-[475px] animate-move-right2 z-50"
                 >
                 </div>
             </div>
             <div class="flex">
                 <div
                     style=`background-image: url(${grassTile.src})`
-                    class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right z-50"
+                    class="absolute h-48 w-full bg-repeat-x -my-24 animate-move-right z-50"
                 >
                 </div>
             </div>
@@ -77,6 +77,17 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         </div>
 
         <style>
+            .container1 {
+                animation: fadeIn ease-in 1s 1 forwards;
+            }
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
             .moon {
                 animation: moon 12s linear infinite;
             }
