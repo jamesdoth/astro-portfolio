@@ -16,8 +16,8 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
         <title>Astro</title>
     </head>
     <body class="overflow-hidden bg-zinc-900">
-        <div class="container1 mx-auto">
-            <div
+        <div class="container1 absolute h-screen w-screen mx-auto">
+            <!-- <div
                 class="absolute h-screen w-screen flex justify-center items-center z-30"
             >
                 <div
@@ -28,7 +28,7 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                     class="sun absolute w-[15vh] h-[15vh] bg-white rounded-full"
                 >
                 </div>
-            </div>
+            </div> -->
 
             <div
                 class="sky relative bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900 z-20"
@@ -40,6 +40,28 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             </div>
 
             <div
+                class="absolute h-96 w-full aspect-auto -my-[475px] animate-move-right2 z-50"
+            >
+                <!-- <div
+                    style=`background-image: url(${cloudsTile.src})`
+                    class="relative h-96 w-auto aspect-auto -my-[475px] animate-move-right2 z-40"
+                >
+                </div> -->
+                <Image
+                    src={clouds}
+                    alt="Cloud Tile"
+                    style="max-height: 384px; width: 100%;"
+                />
+            </div>
+            <div class="flex">
+                <div
+                    style=`background-image: url(${grassTile.src})`
+                    class="absolute h-48 w-full -my-24 animate-move-right z-50"
+                >
+                </div>
+            </div>
+
+            <!-- <div
                 class="ocean overflow-hidden relative h-[6vh] bg-violet-600 z-30"
             >
                 <div
@@ -54,22 +76,22 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                     >
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="flex">
+            <!-- <div class="absolute h-auto w-full aspect-auto -my-[475px] z-50">
                 <div
                     style=`background-image: url(${cloudsTile.src})`
-                    class="flex absolute h-[50vh] w-full -my-[475px] animate-move-right2 z-50"
+                    class="relative h-96 w-auto aspect-auto animate-move-right2 z-40"
                 >
                 </div>
             </div>
             <div class="flex">
                 <div
                     style=`background-image: url(${grassTile.src})`
-                    class="absolute h-48 w-full bg-repeat-x -my-24 animate-move-right z-50"
+                    class="absolute h-48 w-full -my-24 animate-move-right z-50"
                 >
                 </div>
-            </div>
+            </div> -->
             <div
                 class="ground relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95% z-40"
             >
@@ -82,6 +104,9 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             }
             @keyframes fadeIn {
                 0% {
+                    opacity: 0;
+                }
+                60% {
                     opacity: 0;
                 }
                 100% {
