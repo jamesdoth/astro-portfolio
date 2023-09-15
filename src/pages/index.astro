@@ -5,6 +5,8 @@ import clouds from "../images/CLOUDS.png";
 
 const grassTile = await getImage({ src: grass, format: "avif" });
 const cloudsTile = await getImage({ src: clouds, format: "avif" });
+
+console.log("cloudstile:", cloudsTile);
 ---
 
 <html lang="en">
@@ -39,7 +41,9 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             >
             </div>
 
-            <div class="absolute w-screen top-[20%] border-2 border-black z-40">
+            <div
+                class="absolute w-screen top-[20%] border-2 border-black z-40 overflow-hidden"
+            >
                 <!-- <div
                     style=`background-image: url(${cloudsTile.src})`
                     class="relative h-96 w-auto aspect-auto -my-[475px] animate-move-right2 z-40"
@@ -50,17 +54,17 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                     class="animate-move-right2 z-50"
                 >
                 </div> -->
-                <!-- <div
-                    style=`min-height: 24rem; max-height: 20vh; width: auto; border: 2px solid #e66465; background-image: url(${cloudsTile.src})`
+                <div
+                    style=` background-size: cover; height: 20vh; width: auto; border: 2px solid #e66465; background-image: url(${cloudsTile.src});`
                     class="animate-move-right2 z-50"
                 >
-                </div> -->
-                <Image
+                </div>
+                <!-- <Image
                     src={clouds}
                     alt="Cloud Tile"
                     style="max-height: 20vh; width: auto;"
                     class="border-2 border-blue-700"
-                />
+                /> -->
             </div>
             <div class="flex">
                 <div
