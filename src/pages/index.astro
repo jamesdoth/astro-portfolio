@@ -40,7 +40,7 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
             </div>
 
             <div
-                class="absolute h-96 w-full aspect-auto -my-[475px] animate-move-right2 z-50"
+                class="absolute h-96 w-full top-[50%] aspect-auto animate-move-right2 z-50"
             >
                 <!-- <div
                     style=`background-image: url(${cloudsTile.src})`
@@ -50,7 +50,7 @@ const cloudsTile = await getImage({ src: clouds, format: "avif" });
                 <Image
                     src={clouds}
                     alt="Cloud Tile"
-                    style="max-height: 384px; width: 100%;"
+                    style="max-height: 25vh; width: auto;"
                 />
             </div>
             <div class="flex">
