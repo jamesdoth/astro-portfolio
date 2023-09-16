@@ -1,24 +1,9 @@
 ---
-import { Image, getImage } from "astro:assets";
-import grass from "../images/GRASS.png";
-import clouds from "../images/CLOUDS.png";
-
-const grassTile = await getImage({ src: grass, format: "avif" });
-const cloudsTile = await getImage({ src: clouds, format: "avif" });
-
-console.log("cloudstile:", cloudsTile);
-
-const {} = Astro.props;
+import MainHead from "./MainHead.astro";
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
-    </head>
+    <MainHead title="Main Page" />
     <body class="overflow-hidden bg-zinc-900">
         <slot />
     </body>
