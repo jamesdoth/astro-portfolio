@@ -1,5 +1,14 @@
 ---
-import Hero from "../components/Hero.astro";
+import { Image, getImage } from "astro:assets";
+import grass from "../images/GRASS.png";
+import clouds from "../images/CLOUDS.png";
+
+const grassTile = await getImage({ src: grass, format: "avif" });
+const cloudsTile = await getImage({ src: clouds, format: "avif" });
+
+console.log("cloudstile:", cloudsTile);
+
+const {} = Astro.props;
 ---
 
 <html lang="en">
@@ -11,6 +20,6 @@ import Hero from "../components/Hero.astro";
         <title>Astro</title>
     </head>
     <body class="overflow-hidden bg-zinc-900">
-        <Hero />
+        <slot />
     </body>
 </html>
