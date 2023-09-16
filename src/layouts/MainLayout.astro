@@ -1,9 +1,11 @@
 ---
 import MainHead from "./MainHead.astro";
+
+const { title = "main page" } = Astro.props;
 ---
 
 <html lang="en">
-    <MainHead title="Main Page" />
+    <MainHead {title} />
     <body class="overflow-hidden bg-zinc-900">
         <slot />
     </body>
