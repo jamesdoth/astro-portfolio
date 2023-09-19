@@ -2,47 +2,108 @@
 
 ---
 
-<div class="absolute h-screen w-screen flex justify-center items-center z-30">
+<script>
+    const skyNight = document.querySelector<HTMLElement>(".sky-night");
+    const skyDay = document.querySelector<HTMLElement>(".sky-day");
+    const skySunset = document.querySelector<HTMLElement>(".sky-sunset");
+
+    if (skyNight && skyDay && skySunset) {
+        // skyDay.style.opacity = "1";
+        // skySunset.style.opacity = "1";
+
+        const animateSky = () => {
+            skyNight.animate([{ opacity: 1 }, { opacity: 0 }], {
+                duration: 5000,
+                fill: "forwards",
+                easing: "linear",
+            }).onfinish = () => {
+                skyDay.animate([{ opacity: 1 }, { opacity: 0 }], {
+                    duration: 5000,
+                    fill: "forwards",
+                    easing: "linear",
+                }).onfinish = () => {
+                    skySunset.animate([{ opacity: 1 }, { opacity: 0 }], {
+                        duration: 5000,
+                        fill: "forwards",
+                        easing: "linear",
+                    }).onfinish = () => {
+                        skyNight.animate([{ opacity: 0 }, { opacity: 1 }], {
+                            duration: 0,
+                            fill: "forwards",
+                            easing: "linear",
+                        }).onfinish = () => {
+                            skyDay.animate([{ opacity: 0 }, { opacity: 1 }], {
+                                duration: 0,
+                                fill: "forwards",
+                                easing: "linear",
+                            }).onfinish = () => {
+                                skySunset.animate(
+                                    [{ opacity: 0 }, { opacity: 1 }],
+                                    {
+                                        duration: 0,
+                                        fill: "forwards",
+                                        easing: "linear",
+                                    },
+                                ).onfinish = () => {
+                                    animateSky();
+                                };
+                            };
+                        };
+                    };
+                };
+            };
+        };
+        animateSky();
+    }
+</script>
+
+<section class="container1 absolute h-[100vh] w-[100vw] mx-auto">
+    <div class="absolute flex justify-center h-[74.5] w-screen">
+        <div
+            class="sky-night-base absolute bg-gradient-to-t h-screen w-screen from-[#0e367b] to-[#030221]"
+        >
+        </div>
+        <div
+            class="sky-sunset absolute bg-gradient-to-t h-screen w-screen from-rose-400 to-violet-900"
+        >
+        </div>
+        <div
+            class="sky-day absolute bg-gradient-to-t h-screen w-screen from-[#b0eaf8] to-[#6fdaff]"
+        >
+        </div>
+        <div
+            class="sky-night absolute bg-gradient-to-t h-screen w-screen from-[#0e367b] to-[#030221]"
+        >
+        </div>
+    </div>
+
     <!-- <div
-                class="sky-sunset relative bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900 z-20"
-            >
-            </div> -->
-    <div
-        class="sky-night relative bg-gradient-to-t h-[74.5vh] from-[#0e367b] to-[#030221] z-20"
+        class="horizon-day relative h-[2vh] bg-gradient-to-t from-[#a4f2ec] from-30% to-[#faf4f0] to-40% z-40"
     >
     </div>
-    <!-- <div
-                class="sky-day relative bg-gradient-to-t h-[74.5vh] from-[#b0eaf8] to-[#6fdaff] z-20"
-            >
-            </div> -->
-    <!-- <div
-                class="horizon-sunset relative h-[2vh] bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40% z-40"
-            >
-            </div> -->
-    <!-- <div
-                class="horizon-day relative h-[2vh] bg-gradient-to-t from-[#a4f2ec] from-30% to-[#faf4f0] to-40% z-40"
-            >
-            </div> -->
     <div
         class="horizon-night relative h-[2vh] bg-gradient-to-t from-[#222b70] from-30% to-[#0f205d] to-40% z-40"
     >
     </div>
+    <div
+        class="horizon-sunset relative h-[2vh] bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40% z-40"
+    >
+    </div>
 
-    <!-- <div
-                class="ocean-sunset overflow-hidden relative h-[6vh] bg-violet-600 z-30"
-            > -->
-    <!-- <div
-                class="ocean-day overflow-hidden relative h-[6vh] bg-[#62a2f7] z-30"
-            > -->
+    <div class="ocean-day overflow-hidden relative h-[6vh] bg-[#62a2f7] z-30">
+    </div>
+
     <div class="ocean-night overflow-hidden relative h-[6vh] bg-[#0d1944] z-30">
     </div>
-    <!-- </div> -->
-    <!-- </div> -->
+    <div
+        class="ocean-sunset overflow-hidden relative h-[6vh] bg-violet-600 z-30"
+    >
+    </div>
 
-    <!-- <div
-                class="ground-sunset relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95% z-40"
-            >
-            </div> -->
-    <!-- <div class="ground-day relative h-[17.5vh] bg-[#b8c07d] z-40"></div> -->
+    <div class="ground-day relative h-[17.5vh] bg-[#b8c07d] z-40"></div>
     <div class="ground-night relative h-[17.5vh] bg-[#1a1916] z-40"></div>
-</div>
+    <div
+        class="ground-sunset relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95% z-40"
+    >
+    </div> -->
+</section>
