@@ -1,87 +1,21 @@
 ---
-
+import Animation from "./Animation.astro";
 ---
 
-<script>
-    const night = document.querySelectorAll<HTMLElement>(".night");
-    const day = document.querySelectorAll<HTMLElement>(".day");
-    const sunset = document.querySelectorAll<HTMLElement>(".sunset");
-
-    const animate = () => {
-        return new Promise((resolve) => {
-            night.forEach((night) => {
-                night.animate([{ opacity: 1 }, { opacity: 0 }], {
-                    duration: 5000,
-                    fill: "forwards",
-                    easing: "linear",
-                }).onfinish = () => {
-                    day.forEach((day) => {
-                        day.animate([{ opacity: 1 }, { opacity: 0 }], {
-                            duration: 5000,
-                            fill: "forwards",
-                            easing: "linear",
-                        }).onfinish = () => {
-                            sunset.forEach((sunset) => {
-                                sunset.animate(
-                                    [{ opacity: 1 }, { opacity: 0 }],
-                                    {
-                                        duration: 5000,
-                                        fill: "forwards",
-                                        easing: "linear",
-                                    },
-                                ).onfinish = resolve;
-                            });
-                        };
-                    });
-                };
-            });
-        });
-    };
-
-    const resetAnimate = () => {
-        return new Promise((resolve) => {
-            night.forEach((night) => {
-                night.animate([{ opacity: 0 }, { opacity: 1 }], {
-                    duration: 0,
-                    fill: "forwards",
-                    easing: "linear",
-                }).onfinish = () => {
-                    day.forEach((day) => {
-                        day.animate([{ opacity: 0 }, { opacity: 1 }], {
-                            duration: 0,
-                            fill: "forwards",
-                            easing: "linear",
-                        }).onfinish = () => {
-                            sunset.forEach((sunset) => {
-                                sunset.animate(
-                                    [{ opacity: 0 }, { opacity: 1 }],
-                                    {
-                                        duration: 0,
-                                        fill: "forwards",
-                                        easing: "linear",
-                                    },
-                                ).onfinish = resolve;
-                            });
-                        };
-                    });
-                };
-            });
-        });
-    };
-
-    const playAnimations = async () => {
-        while (true) {
-            await animate();
-            await resetAnimate();
-        }
-    };
-
-    if (night.length && day.length && sunset.length) {
-        playAnimations();
-    }
-</script>
+<Animation />
 
 <section class="container1 absolute h-[100vh] w-[100vw] mx-auto">
+    <!-- sky moon 1 -->
+    <div
+        class="absolute h-screen w-screen flex justify-center items-center z-30"
+    >
+        <div
+            class="moon absolute w-[10vh] h-[10vh] bg-transparent shadow-moon-border rounded-full"
+        >
+        </div>
+        <div class="sun absolute w-[10vh] h-[10vh] bg-white rounded-full"></div>
+    </div>
+
     <!-- sky section -->
     <div
         class="sky-night-base absolute bg-gradient-to-t h-[74.5vh] w-screen from-[#0e367b] to-[#030221]"
@@ -118,21 +52,38 @@
     </div>
     <!-- ocean section -->
     <div
-        class="ocean-night-base overflow-hidden absolute h-[6vh] w-screen top-[76.5%] bg-[#0d1944] z-30"
+        class="overflow-hidden absolute h-[6vh] w-screen top-[76.5%] flex justify-center"
     >
+        <div
+            class="ocean-night-base overflow-hidden absolute h-[6vh] w-screen bg-[#0d1944] z-30"
+        >
+            <div
+                class="sunset ocean overflow-hidden absolute h-[6vh] w-screen bg-violet-600 z-30"
+            >
+                <div
+                    class="day ocean overflow-hidden absolute h-[6vh] w-screen bg-[#62a2f7] z-30"
+                >
+                    <div
+                        class="night ocean overflow-hidden absolute h-[6vh] w-screen bg-[#0d1944] z-30"
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="absolute h-screen w-screen -top-[1760%] flex justify-center items-center z-40"
+        >
+            <div
+                class="moon2 absolute w-[9.5vh] h-[9.5vh] bg-transparent shadow-moon-border rounded-full blur-sm scale-x-100"
+            >
+            </div>
+            <div
+                class="sun2 absolute w-[9vh] h-[9vh] bg-white rounded-full blur-sm scale-x-100"
+            >
+            </div>
+        </div>
     </div>
-    <div
-        class="sunset ocean overflow-hidden absolute h-[6vh] w-screen top-[76.5%] bg-violet-600 z-30"
-    >
-    </div>
-    <div
-        class="day ocean overflow-hidden absolute h-[6vh] w-screen top-[76.5%] bg-[#62a2f7] z-30"
-    >
-    </div>
-    <div
-        class="night ocean overflow-hidden absolute h-[6vh] w-screen top-[76.5%] bg-[#0d1944] z-30"
-    >
-    </div>
+
     <!-- ground section -->
     <div
         class="ground-night-base absolute h-[17.5vh] w-screen top-[82.5%] bg-[#1a1916] z-40"
@@ -151,3 +102,486 @@
     >
     </div>
 </section>
+
+<style>
+    .container1 {
+        animation: fadeIn ease-in 1s 1 forwards;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        60% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .moon {
+        animation: moon 24s linear infinite;
+    }
+    .sun {
+        animation: sun 24s linear infinite;
+    }
+    .moon2 {
+        animation: moon2 24s linear infinite reverse;
+    }
+    .sun2 {
+        animation: sun2 24s linear infinite reverse;
+    }
+    @keyframes moon {
+        0% {
+            transform: translateX(-40vw) translateY(40vh);
+        }
+        2.7777% {
+            transform: translateX(-39vw) translateY(29vh);
+        }
+        5.5554% {
+            transform: translateX(-37.5vw) translateY(19vh);
+        }
+        8.3331% {
+            transform: translateX(-36vw) translateY(8.5vh);
+        }
+        11.1108% {
+            transform: translateX(-35vw) translateY(-1vh);
+        }
+        13.8885% {
+            transform: translateX(-33vw) translateY(-12vh);
+        }
+        16.6662% {
+            transform: translateX(-29vw) translateY(-23vh);
+        }
+        19.4439% {
+            transform: translateX(-22vw) translateY(-33.5vh);
+        }
+        22.2216% {
+            transform: translateX(-12vw) translateY(-37vh);
+        }
+        24.9993% {
+            transform: translateX(0vw) translateY(-40vh);
+        }
+        27.777% {
+            transform: translateX(12vw) translateY(-37vh);
+        }
+        30.5547% {
+            transform: translateX(22vw) translateY(-33.5vh);
+        }
+        33.3324% {
+            transform: translateX(29vw) translateY(-23vh);
+        }
+        36.1101% {
+            transform: translateX(33vw) translateY(-12vh);
+        }
+        38.8878% {
+            transform: translateX(35vw) translateY(-1vh);
+        }
+        41.6655% {
+            transform: translateX(36vw) translateY(8.5vh);
+        }
+        44.4432% {
+            transform: translateX(37.5vw) translateY(19vh);
+        }
+        47.2209% {
+            transform: translateX(39vw) translateY(29vh);
+        }
+        49.9986% {
+            transform: translateX(40vw) translateY(40vh);
+        }
+        52.7763% {
+            transform: translateX(39vw) translateY(51vh);
+        }
+        55.554% {
+            transform: translateX(37.5vw) translateY(61vh);
+        }
+        58.3317% {
+            transform: translateX(36vw) translateY(71.5vh);
+        }
+        61.1094% {
+            transform: translateX(35vw) translateY(80vh);
+        }
+        63.8871% {
+            transform: translateX(33vw) translateY(91vh);
+        }
+        66.6648% {
+            transform: translateX(29vw) translateY(102vh);
+        }
+        69.4425% {
+            transform: translateX(22vw) translateY(112.5vh);
+        }
+        72.2202% {
+            transform: translateX(12vw) translateY(116vh);
+        }
+        74.9979% {
+            transform: translateX(0vw) translateY(120vh);
+        }
+        77.7756% {
+            transform: translateX(-12vw) translateY(116vh);
+        }
+        80.5533% {
+            transform: translateX(-22vw) translateY(112.5vh);
+        }
+        83.331% {
+            transform: translateX(-29vw) translateY(102vh);
+        }
+        86.1087% {
+            transform: translateX(-33vw) translateY(91vh);
+        }
+        88.8864% {
+            transform: translateX(-35vw) translateY(80vh);
+        }
+        91.6641% {
+            transform: translateX(-36vw) translateY(71.5vh);
+        }
+        94.4418% {
+            transform: translateX(-37.5vw) translateY(61vh);
+        }
+        97.2195% {
+            transform: translateX(-39vw) translateY(51vh);
+        }
+        100% {
+            transform: translateX(-40vw) translateY(40vh);
+        }
+    }
+
+    @keyframes sun {
+        0% {
+            transform: translateX(40vw) translateY(40vh);
+        }
+        2.7777% {
+            transform: translateX(39vw) translateY(51vh);
+        }
+        5.5554% {
+            transform: translateX(37.5vw) translateY(61vh);
+        }
+        8.3331% {
+            transform: translateX(36vw) translateY(71.5vh);
+        }
+        11.1108% {
+            transform: translateX(35vw) translateY(80vh);
+        }
+        13.8885% {
+            transform: translateX(33vw) translateY(91vh);
+        }
+        16.6662% {
+            transform: translateX(29vw) translateY(102vh);
+        }
+        19.4439% {
+            transform: translateX(22vw) translateY(112.5vh);
+        }
+        22.2216% {
+            transform: translateX(12vw) translateY(116vh);
+        }
+        24.9993% {
+            transform: translateX(0vw) translateY(120vh);
+        }
+        27.777% {
+            transform: translateX(-12vw) translateY(116vh);
+        }
+        30.5547% {
+            transform: translateX(-22vw) translateY(112.5vh);
+        }
+        33.3324% {
+            transform: translateX(-29vw) translateY(102vh);
+        }
+        36.1101% {
+            transform: translateX(-33vw) translateY(91vh);
+        }
+        38.8878% {
+            transform: translateX(-35vw) translateY(80vh);
+        }
+        41.6655% {
+            transform: translateX(-36vw) translateY(71.5vh);
+        }
+        44.4432% {
+            transform: translateX(-37.5vw) translateY(61vh);
+        }
+        47.2209% {
+            transform: translateX(-39vw) translateY(51vh);
+        }
+        49.9986% {
+            transform: translateX(-40vw) translateY(40vh);
+        }
+        52.7763% {
+            transform: translateX(-39vw) translateY(29vh);
+        }
+        55.554% {
+            transform: translateX(-37.5vw) translateY(19vh);
+        }
+        58.3317% {
+            transform: translateX(-36vw) translateY(8.5vh);
+        }
+        61.1094% {
+            transform: translateX(-35vw) translateY(-1vh);
+        }
+        63.8871% {
+            transform: translateX(-33vw) translateY(-12vh);
+        }
+        66.6648% {
+            transform: translateX(-29vw) translateY(-23vh);
+        }
+        69.4425% {
+            transform: translateX(-22vw) translateY(-33.5vh);
+        }
+        72.2202% {
+            transform: translateX(-12vw) translateY(-37vh);
+        }
+        74.9979% {
+            transform: translateX(0vw) translateY(-40vh);
+        }
+        77.7756% {
+            transform: translateX(12vw) translateY(-37vh);
+        }
+        80.5533% {
+            transform: translateX(22vw) translateY(-33.5vh);
+        }
+        83.331% {
+            transform: translateX(29vw) translateY(-23vh);
+        }
+        86.1087% {
+            transform: translateX(33vw) translateY(-12vh);
+        }
+        88.8864% {
+            transform: translateX(35vw) translateY(-1vh);
+        }
+        91.6641% {
+            transform: translateX(36vw) translateY(8.5vh);
+        }
+        94.4418% {
+            transform: translateX(37.5vw) translateY(19vh);
+        }
+        97.2195% {
+            transform: translateX(39vw) translateY(29vh);
+        }
+        100% {
+            transform: translateX(40vw) translateY(40vh);
+        }
+    }
+
+    @keyframes moon2 {
+        0% {
+            transform: translateX(-40vw) translateY(40vh);
+        }
+        2.7777% {
+            transform: translateX(-39vw) translateY(29vh);
+        }
+        5.5554% {
+            transform: translateX(-37.5vw) translateY(19vh);
+        }
+        8.3331% {
+            transform: translateX(-36vw) translateY(8.5vh);
+        }
+        11.1108% {
+            transform: translateX(-35vw) translateY(-1vh);
+        }
+        13.8885% {
+            transform: translateX(-33vw) translateY(-12vh);
+        }
+        16.6662% {
+            transform: translateX(-29vw) translateY(-23vh);
+        }
+        19.4439% {
+            transform: translateX(-22vw) translateY(-33.5vh);
+        }
+        22.2216% {
+            transform: translateX(-12vw) translateY(-37vh);
+        }
+        24.9993% {
+            transform: translateX(0vw) translateY(-40vh);
+        }
+        27.777% {
+            transform: translateX(12vw) translateY(-37vh);
+        }
+        30.5547% {
+            transform: translateX(22vw) translateY(-33.5vh);
+        }
+        33.3324% {
+            transform: translateX(29vw) translateY(-23vh);
+        }
+        36.1101% {
+            transform: translateX(33vw) translateY(-12vh);
+        }
+        38.8878% {
+            transform: translateX(35vw) translateY(-1vh);
+        }
+        41.6655% {
+            transform: translateX(36vw) translateY(8.5vh);
+        }
+        44.4432% {
+            transform: translateX(37.5vw) translateY(19vh);
+        }
+        47.2209% {
+            transform: translateX(39vw) translateY(29vh);
+        }
+        49.9986% {
+            transform: translateX(40vw) translateY(40vh);
+        }
+        52.7763% {
+            transform: translateX(39vw) translateY(51vh);
+        }
+        55.554% {
+            transform: translateX(37.5vw) translateY(61vh);
+        }
+        58.3317% {
+            transform: translateX(36vw) translateY(71.5vh);
+        }
+        61.1094% {
+            transform: translateX(35vw) translateY(80vh);
+        }
+        63.8871% {
+            transform: translateX(33vw) translateY(91vh);
+        }
+        66.6648% {
+            transform: translateX(29vw) translateY(102vh);
+        }
+        69.4425% {
+            transform: translateX(22vw) translateY(112.5vh);
+        }
+        72.2202% {
+            transform: translateX(12vw) translateY(116vh);
+        }
+        74.9979% {
+            transform: translateX(0vw) translateY(120vh);
+        }
+        77.7756% {
+            transform: translateX(-12vw) translateY(116vh);
+        }
+        80.5533% {
+            transform: translateX(-22vw) translateY(112.5vh);
+        }
+        83.331% {
+            transform: translateX(-29vw) translateY(102vh);
+        }
+        86.1087% {
+            transform: translateX(-33vw) translateY(91vh);
+        }
+        88.8864% {
+            transform: translateX(-35vw) translateY(80vh);
+        }
+        91.6641% {
+            transform: translateX(-36vw) translateY(71.5vh);
+        }
+        94.4418% {
+            transform: translateX(-37.5vw) translateY(61vh);
+        }
+        97.2195% {
+            transform: translateX(-39vw) translateY(51vh);
+        }
+        100% {
+            transform: translateX(-40vw) translateY(40vh);
+        }
+    }
+    @keyframes sun2 {
+        0% {
+            transform: translateX(40vw) translateY(40vh);
+        }
+        2.7777% {
+            transform: translateX(39vw) translateY(51vh);
+        }
+        5.5554% {
+            transform: translateX(37.5vw) translateY(61vh);
+        }
+        8.3331% {
+            transform: translateX(36vw) translateY(71.5vh);
+        }
+        11.1108% {
+            transform: translateX(35vw) translateY(80vh);
+        }
+        13.8885% {
+            transform: translateX(33vw) translateY(91vh);
+        }
+        16.6662% {
+            transform: translateX(29vw) translateY(102vh);
+        }
+        19.4439% {
+            transform: translateX(22vw) translateY(112.5vh);
+        }
+        22.2216% {
+            transform: translateX(12vw) translateY(116vh);
+        }
+        24.9993% {
+            transform: translateX(0vw) translateY(120vh);
+        }
+        27.777% {
+            transform: translateX(-12vw) translateY(116vh);
+        }
+        30.5547% {
+            transform: translateX(-22vw) translateY(112.5vh);
+        }
+        33.3324% {
+            transform: translateX(-29vw) translateY(102vh);
+        }
+        36.1101% {
+            transform: translateX(-33vw) translateY(91vh);
+        }
+        38.8878% {
+            transform: translateX(-35vw) translateY(80vh);
+        }
+        41.6655% {
+            transform: translateX(-36vw) translateY(71.5vh);
+        }
+        44.4432% {
+            transform: translateX(-37.5vw) translateY(61vh);
+        }
+        47.2209% {
+            transform: translateX(-39vw) translateY(51vh);
+        }
+        49.9986% {
+            transform: translateX(-40vw) translateY(40vh);
+        }
+        52.7763% {
+            transform: translateX(-39vw) translateY(29vh);
+        }
+        55.554% {
+            transform: translateX(-37.5vw) translateY(19vh);
+        }
+        58.3317% {
+            transform: translateX(-36vw) translateY(8.5vh);
+        }
+        61.1094% {
+            transform: translateX(-35vw) translateY(-1vh);
+        }
+        63.8871% {
+            transform: translateX(-33vw) translateY(-12vh);
+        }
+        66.6648% {
+            transform: translateX(-29vw) translateY(-23vh);
+        }
+        69.4425% {
+            transform: translateX(-22vw) translateY(-33.5vh);
+        }
+        72.2202% {
+            transform: translateX(-12vw) translateY(-37vh);
+        }
+        74.9979% {
+            transform: translateX(0vw) translateY(-40vh);
+        }
+        77.7756% {
+            transform: translateX(12vw) translateY(-37vh);
+        }
+        80.5533% {
+            transform: translateX(22vw) translateY(-33.5vh);
+        }
+        83.331% {
+            transform: translateX(29vw) translateY(-23vh);
+        }
+        86.1087% {
+            transform: translateX(33vw) translateY(-12vh);
+        }
+        88.8864% {
+            transform: translateX(35vw) translateY(-1vh);
+        }
+        91.6641% {
+            transform: translateX(36vw) translateY(8.5vh);
+        }
+        94.4418% {
+            transform: translateX(37.5vw) translateY(19vh);
+        }
+        97.2195% {
+            transform: translateX(39vw) translateY(29vh);
+        }
+        100% {
+            transform: translateX(40vw) translateY(40vh);
+        }
+    }
+</style>
