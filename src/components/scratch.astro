@@ -1,0 +1,282 @@
+---
+
+---
+
+<!-- /* .wrapper-1 {
+                animation: y-axis 5s linear infinite;
+            }
+            @keyframes y-axis {
+                    0% {
+                        transform: translateY(0px);
+                    }
+                    25% {
+                        transform: translateY(100px);
+                    }
+                    75% {
+                        transform: translateY(-100px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+            .wrapper-2 {
+                animation: x-axis 5s linear infinite;
+            }
+            @keyframes x-axis {
+                    0% {
+                        transform: rotateZ(0deg);
+                    }
+                    20% {
+                        transform: rotateZ(90deg);
+                    }
+                    40% {
+                        transform: rotateZ(180deg);
+                    }
+                    60% {
+                        transform: rotateZ(270deg);
+                    }
+                    100% {
+                        transform: rotateZ(360deg);
+                    }
+                } */
+
+    /* .deform {
+                width: 50%;
+                height: 70%;
+                transform: scaleX(80%) scaleY(80%);
+                background-color: lightblue;
+                left: 25%;
+                position: absolute;
+                top: 15%;
+                border-radius: 50%;
+            }
+            .rotate {
+                background-color: blue;
+                width: 100%;
+                height: 100%;
+                animation: circle 5s infinite linear;
+                transform-origin: 50% 50%;
+            }
+            .counterrotate {
+                background-color: black;
+                left: 10%;
+                top: 10%;
+                width: 10vh;
+                height: 10vh;
+                animation: ccircle 5s infinite linear;
+            }
+            .inner {
+                width: 10vh;
+                height: 10vh;
+                position: absolute;
+                background-color: red;
+                display: block;
+                transform: scaleX(0.33rem);
+            }
+            @keyframes circle {
+                from {
+                    transform: rotateZ(0deg);
+                }
+                to {
+                    transform: rotateZ(360deg);
+                }
+            }
+            @keyframes ccircle {
+                from {
+                    transform: rotateZ(360deg);
+                }
+                to {
+                    transform: rotateZ(0deg);
+                }
+            } */
+
+    /* .rotate {
+            animation: circle 5s infinite linear;
+        }
+
+        .counterrotate {
+            animation: ccircle 5s infinite linear;
+        }
+
+        @keyframes circle {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        @keyframes ccircle {
+            from {
+                transform: rotateZ(360deg);
+            }
+            to {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        .rotate2 {
+            animation: circle2 5s infinite linear;
+        }
+
+        .counterrotate2 {
+            animation: ccircle2 5s infinite linear;
+        }
+
+        @keyframes circle2 {
+            from {
+                transform: rotateZ(360deg);
+            }
+            to {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes ccircle2 {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        } */ --><!-- <div class="h-screen w-screen bg-slate-500 relative">
+            <div class="deform">
+                <div class="rotate flex justify-center">
+                    <div class="counterrotate">
+                        <div class="inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div> --><!-- <div
+                class="animation-container overflow-hidden absolute w-full h-screen"
+            >
+                <div
+                    class="spin-parent w-full h-full flex justify-center items-center absolute z-50 animate-spin-circle"
+                >
+                    z-10
+                    <div
+                        class="center absolute w-24 h-24 bg-black rounded-full"
+                    >
+                        mt-[30rem]
+                    </div>
+                    <div
+                        class="moon absolute w-24 h-24 left-[9%] bg-transparent shadow-moon-border rounded-full animate-moon-rotation"
+                    >
+                        ml-[-10rem] sm:ml-[-15rem] md:ml-[-25rem]
+                    </div>
+                    <div
+                        class="sun absolute w-24 h-24 right-[9%] bg-white rounded-full"
+                    >
+                    </div>
+                </div>
+            </div> --><!-- <div
+                    class="animation-container2 overflow-hidden absolute w-full h-screen"
+                >
+                    <div class="spin-parent2 absolute -top-[5%] flex left-1/2">
+                        -top-[12%]
+                        <div
+                            class="spin2 w-24 h-24 bg-white rounded-full animate-spin-counter"
+                        >
+                            <div
+                                class="moon2 relative ml-[-35rem] w-24 h-24 bg-transparent shadow-moon-border rounded-full animate-moon-rotation2"
+                            >
+                            </div>
+                            <div
+                                class="sun2 relative ml-[35rem] bottom-[100%] w-24 h-24 bg-white rounded-full"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div> --><!-- <body class="overflow-hidden">
+        <div class="mx-auto">
+            <div
+                class="deform w-1/5 h-3/5 bg-transparent left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
+            >
+                <div
+                    class="rotate overflow-hidden w-[100%] h-100%] origin-center flex justify-start"
+                >
+                    <div class="counterrotate w-[50px] h-[50px]">
+                        <div
+                            class="inner w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.605] scale-y-[.55]"
+                        >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="deform w-1/5 h-3/5 bg-transparent left-[40%] top-[47.75%] scale-x-[2.5] scale-y-[2] absolute rounded-full z-30 flex"
+            >
+                <div
+                    class="rotate w-[100%] h-[100%] origin-center flex justify-end items-end"
+                >
+                    <div class="counterrotate absolute w-[50px] h-[50px]">
+                        <div
+                            class="inner w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.605] scale-y-[.55]"
+                        >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="sky relative bg-gradient-to-t h-[74.5vh] from-rose-400 to-violet-900 z-20"
+            >
+            </div>
+            <div
+                class="horizon relative h-[2vh] bg-gradient-to-t from-violet-500 from-30% to-rose-300 to-40% z-40"
+            >
+            </div>
+
+            <div
+                class="ocean relative h-[6vh] bg-violet-600 overflow-hidden z-30"
+            >
+                <div
+                    class="deform2 w-1/5 h-[60vh] bg-transparent left-[40%] -top-[555%] scale-x-[2.5] scale-y-[2] absolute rounded-full flex"
+                >
+                    <div
+                        class="rotate2 w-[100%] h-[100%] origin-center flex justify-start items-end"
+                    >
+                        <div class="counterrotate2 relative w-[50px] h-[50px]">
+                            <div
+                                class="inner2 w-12 h-12 absolute left-0 top-0 bg-transparent shadow-moon-border rounded-full scale-x-[.605] scale-y-[.55]"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="deform2 w-1/5 h-[60vh] bg-transparent left-[40%] -top-[555%] scale-x-[2.5] scale-y-[2] absolute rounded-full flex"
+                >
+                    <div
+                        class="rotate2 w-[100%] h-[100%] origin-center flex justify-end"
+                    >
+                        <div class="counterrotate2 absolute w-[50px] h-[50px]">
+                            <div
+                                class="inner2 w-12 h-12 absolute left-0 top-0 bg-white rounded-full scale-x-[.605] scale-y-[.55]"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div
+                    `background-image: url(${cloudsTile.src})`
+                    class="flex relative h-[384px] w-full -my-[475px] animate-move-right2 z-50"
+                >
+                </div>
+            </div>
+            <div class="flex">
+                <div
+                    style=`background-image: url(${grassTile.src})`
+                    class="relative h-[192px] w-full bg-repeat-x -my-24 animate-move-right z-50"
+                >
+                </div>
+            </div>
+            <div
+                class="ground relative h-[17.5vh] bg-gradient-to-t from-gray-950 from-0% to-amber-950 to-95% z-40"
+            >
+            </div>
+        </div>-->
