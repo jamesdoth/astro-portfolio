@@ -6,20 +6,20 @@ module.exports = {
 			boxShadow: {
       			'moon-border': 'inset -15px 0px 0px 10px #FFFFFF',
     		},
-			animation: {
-				'move-right': 'moveRight 2.15s linear infinite',
-				'move-right2': 'moveRight2 15s linear infinite',
-			},
-			keyframes: {
-				moveRight: {
-				'0%': { backgroundPosition: '0 0' },
-				'100%': { backgroundPosition: '192px 0' },
-				},
-				moveRight2: {
-				'0%': { backgroundPosition: '0 0' },
-				'100%': { backgroundPosition: '500px 0' },
-				},
-			},
+			// animation: {
+			// 	'move-right': 'moveRight 2.15s linear infinite',
+			// 	'move-right2': 'moveRight2 15s linear infinite',
+			// },
+			// keyframes: {
+			// 	moveRight: {
+			// 	'0%': { backgroundPosition: '0 0' },
+			// 	'100%': { backgroundPosition: '192px 0' },
+			// 	},
+			// 	moveRight2: {
+			// 	'0%': { backgroundPosition: '0 0' },
+			// 	'100%': { backgroundPosition: '500px 0' },
+			// 	},
+			// },
 		},
 	},
 	plugins: [],
