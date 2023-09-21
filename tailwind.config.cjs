@@ -6,6 +6,10 @@ module.exports = {
 			boxShadow: {
       			'moon-border': 'inset -15px 0px 0px 10px #FFFFFF',
     		},
+		},
+	},
+	plugins: [],
+}
 			// animation: {
 			// 	'move-right': 'moveRight 2.15s linear infinite',
 			// 	'move-right2': 'moveRight2 15s linear infinite',
@@ -20,10 +24,6 @@ module.exports = {
 			// 	'100%': { backgroundPosition: '500px 0' },
 			// 	},
 			// },
-		},
-	},
-	plugins: [],
-}
 
             /* @keyframes moveRight {
                 0% {
