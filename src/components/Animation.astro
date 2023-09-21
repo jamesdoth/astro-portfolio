@@ -3,80 +3,106 @@
 ---
 
 <script>
-    const night = document.querySelectorAll<HTMLElement>(".night");
-    const day = document.querySelectorAll<HTMLElement>(".day");
-    const sunset = document.querySelectorAll<HTMLElement>(".sunset");
+    // const night = document.querySelectorAll<HTMLElement>(".night");
+    // const day = document.querySelectorAll<HTMLElement>(".day");
+    // const sunset = document.querySelectorAll<HTMLElement>(".sunset");
 
-    const animate = () => {
-        return new Promise((resolve) => {
-            night.forEach((night) => {
-                night.animate([{ opacity: 1 }, { opacity: 0 }], {
-                    duration: 5000,
-                    fill: "forwards",
-                    easing: "linear",
-                }).onfinish = () => {
-                    day.forEach((day) => {
-                        day.animate([{ opacity: 1 }, { opacity: 0 }], {
-                            duration: 5000,
-                            fill: "forwards",
-                            easing: "linear",
-                        }).onfinish = () => {
-                            sunset.forEach((sunset) => {
-                                sunset.animate(
-                                    [{ opacity: 1 }, { opacity: 0 }],
-                                    {
-                                        duration: 5000,
-                                        fill: "forwards",
-                                        easing: "linear",
-                                    },
-                                ).onfinish = resolve;
-                            });
-                        };
-                    });
-                };
-            });
+    // const animate = () => {
+    //     return new Promise((resolve) => {
+    //         night.forEach((night) => {
+    //             night.animate([{ opacity: 1 }, { opacity: 0 }], {
+    //                 duration: 5000,
+    //                 fill: "forwards",
+    //                 easing: "linear",
+    //             }).onfinish = () => {
+    //                 day.forEach((day) => {
+    //                     day.animate([{ opacity: 1 }, { opacity: 0 }], {
+    //                         duration: 5000,
+    //                         fill: "forwards",
+    //                         easing: "linear",
+    //                     }).onfinish = () => {
+    //                         sunset.forEach((sunset) => {
+    //                             sunset.animate(
+    //                                 [{ opacity: 1 }, { opacity: 0 }],
+    //                                 {
+    //                                     duration: 5000,
+    //                                     fill: "forwards",
+    //                                     easing: "linear",
+    //                                 },
+    //                             ).onfinish = resolve;
+    //                         });
+    //                     };
+    //                 });
+    //             };
+    //         });
+    //     });
+    // };
+
+    // const resetAnimate = () => {
+    //     return new Promise((resolve) => {
+    //         night.forEach((night) => {
+    //             night.animate([{ opacity: 0 }, { opacity: 1 }], {
+    //                 duration: 0,
+    //                 fill: "forwards",
+    //                 easing: "linear",
+    //             }).onfinish = () => {
+    //                 day.forEach((day) => {
+    //                     day.animate([{ opacity: 0 }, { opacity: 1 }], {
+    //                         duration: 0,
+    //                         fill: "forwards",
+    //                         easing: "linear",
+    //                     }).onfinish = () => {
+    //                         sunset.forEach((sunset) => {
+    //                             sunset.animate(
+    //                                 [{ opacity: 0 }, { opacity: 1 }],
+    //                                 {
+    //                                     duration: 0,
+    //                                     fill: "forwards",
+    //                                     easing: "linear",
+    //                                 },
+    //                             ).onfinish = resolve;
+    //                         });
+    //                     };
+    //                 });
+    //             };
+    //         });
+    //     });
+    // };
+
+    // const playAnimations = async () => {
+    //     while (true) {
+    //         await animate();
+    //         await resetAnimate();
+    //     }
+    // };
+
+    // if (night.length && day.length && sunset.length) {
+    //     playAnimations();
+    // }
+
+    const element = document.querySelector(".animate-move-right2");
+
+    function updateAnimation() {
+        const screenHeight = window.innerHeight;
+        const imageHeight = screenHeight / 5;
+        const defaultWidth = 500;
+        const animationDuration = screenHeight / 0.2;
+        console.log(animationDuration);
+        console.log(imageHeight);
+
+        const keyframes = [
+            { backgroundPosition: `0 0` },
+            { backgroundPosition: `${defaultWidth}px 0` },
+        ];
+
+        const animation = element?.animate(keyframes, {
+            duration: 5000,
+            iterations: Infinity,
+            easing: "linear",
         });
-    };
-
-    const resetAnimate = () => {
-        return new Promise((resolve) => {
-            night.forEach((night) => {
-                night.animate([{ opacity: 0 }, { opacity: 1 }], {
-                    duration: 0,
-                    fill: "forwards",
-                    easing: "linear",
-                }).onfinish = () => {
-                    day.forEach((day) => {
-                        day.animate([{ opacity: 0 }, { opacity: 1 }], {
-                            duration: 0,
-                            fill: "forwards",
-                            easing: "linear",
-                        }).onfinish = () => {
-                            sunset.forEach((sunset) => {
-                                sunset.animate(
-                                    [{ opacity: 0 }, { opacity: 1 }],
-                                    {
-                                        duration: 0,
-                                        fill: "forwards",
-                                        easing: "linear",
-                                    },
-                                ).onfinish = resolve;
-                            });
-                        };
-                    });
-                };
-            });
-        });
-    };
-
-    const playAnimations = async () => {
-        while (true) {
-            await animate();
-            await resetAnimate();
-        }
-    };
-
-    if (night.length && day.length && sunset.length) {
-        playAnimations();
     }
+
+    updateAnimation();
+
+    window.addEventListener("resize", updateAnimation);
 </script>
