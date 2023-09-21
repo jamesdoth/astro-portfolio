@@ -80,19 +80,21 @@
     //     playAnimations();
     // }
 
-    const element = document.querySelector(".animate-move-right2");
+    const element = document.querySelector(".clouds");
 
     function updateAnimation() {
         const screenHeight = window.innerHeight;
-        const imageHeight = screenHeight / 5;
-        const defaultWidth = 500;
-        const animationDuration = screenHeight / 0.2;
-        console.log(animationDuration);
-        console.log(imageHeight);
+
+        // to get image ratio. get window screen height / image width inside container = image ratio
+        // image width = screen height / image ratio
+
+        const imageWidth = screenHeight / 2.5;
+
+        console.log(`imageWidth: ${imageWidth}px`);
 
         const keyframes = [
             { backgroundPosition: `0 0` },
-            { backgroundPosition: `${defaultWidth}px 0` },
+            { backgroundPosition: `${imageWidth}px 0` },
         ];
 
         const animation = element?.animate(keyframes, {
