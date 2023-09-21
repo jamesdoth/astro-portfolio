@@ -69,7 +69,7 @@
         });
     };
 
-    const clouds = document.querySelector(".clouds");
+    const clouds = document.querySelector<HTMLElement>(".clouds");
     const cloudAnimation = () => {
         const screenHeight = window.innerHeight;
 
@@ -78,7 +78,7 @@
 
         const imageWidth = screenHeight / 2.5;
 
-        console.log(`imageWidth: ${imageWidth}px`);
+        console.log(`cloud imageWidth: ${imageWidth}px`);
 
         clouds?.animate(
             [
@@ -94,6 +94,26 @@
         window.addEventListener("resize", cloudAnimation);
     };
 
+    const grass = document.querySelector<HTMLElement>(".grass");
+    const grassAnimation = () => {
+        const screenHeight = window.innerHeight;
+        const imageWidth = screenHeight / 6.6;
+        console.log(`grass imageWidth: ${imageWidth}px`);
+
+        grass?.animate(
+            [
+                { backgroundPosition: `0 0` },
+                { backgroundPosition: `${imageWidth}px 0` },
+            ],
+            {
+                duration: 2000,
+                iterations: Infinity,
+                easing: "linear",
+            },
+        );
+        window.addEventListener("resize", grassAnimation);
+    };
+
     const playBGOpacityAnimation = async () => {
         while (true) {
             await bgOpacityAnimation();
@@ -104,5 +124,6 @@
     if (night.length && day.length && sunset.length) {
         playBGOpacityAnimation();
         cloudAnimation();
+        grassAnimation();
     }
 </script>
