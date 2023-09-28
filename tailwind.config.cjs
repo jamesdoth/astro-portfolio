@@ -4,8 +4,8 @@ module.exports = {
 	theme: {
 		extend: {
 			boxShadow: {
-      			'moon-border': 'inset -15px 0px 0px 10px #FFFFFF',
-    		},
+				'moon-border': 'inset -15px 0px 0px 10px #FFFFFF',
+			},
 		},
 	},
 	plugins: [],
