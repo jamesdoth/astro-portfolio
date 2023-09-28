@@ -6,6 +6,10 @@
     // sunrise  winter 7am     spring/fall 6am         summer 5am
     // sunset   winter 5pm     spring/fall 6:30pm      summer 8pm
 
+    let animationSpeed = 1;
+    let baseDuration = 10000;
+    const animationDuration = baseDuration * animationSpeed;
+
     const night = document.querySelectorAll<HTMLElement>(".night");
     const day = document.querySelectorAll<HTMLElement>(".day");
     const sunset = document.querySelectorAll<HTMLElement>(".sunset");
