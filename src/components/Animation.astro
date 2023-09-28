@@ -11,9 +11,53 @@
     const animationDuration = baseDuration * animationSpeed;
     const now = new Date();
     const month = now.getMonth();
+    const currentTime = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+
     let sunriseSystem, sunsetSystem;
     console.log("this is the date: " + now);
     console.log("this is the month: " + month);
+    console.log("currentTime test: " + currentTime);
+
+    if (month >= 3 && month <= 5) {
+        // Spring (March to May)
+        sunriseSystem = "6:00 AM";
+        sunsetSystem = "6:30 PM";
+    } else if (month >= 6 && month <= 8) {
+        // Summer (June to August)
+        sunriseSystem = "5:00 AM";
+        sunsetSystem = "8:00 PM";
+    } else if (month >= 9 && month <= 11) {
+        // Fall (September to November)
+        sunriseSystem = "6:00 AM";
+        sunsetSystem = "6:30 PM";
+    } else {
+        // Winter (December to February)
+        sunriseSystem = "7:00 AM";
+        sunsetSystem = "5:00 PM";
+    }
+
+    const animateNightToDay = () => {
+        night.forEach((night) => {
+            night.animate([{ opacity: 1 }, { opacity: 0 }], {
+                duration: 5000,
+                fill: "forwards",
+                easing: "linear",
+            });
+        });
+    };
+
+    const animateDayToSunset = () => {
+        day.forEach((day) => {
+            day.animate([{ opacity: 1 }, { opacity: 0 }], {
+                duration: 5000,
+                fill: "forwards",
+                easing: "linear",
+            });
+        });
+    };
 
     const night = document.querySelectorAll<HTMLElement>(".night");
     const day = document.querySelectorAll<HTMLElement>(".day");
