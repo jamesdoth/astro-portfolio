@@ -59,6 +59,16 @@
         });
     };
 
+    const animateSunsetToNight = () => {
+        sunset.forEach((sunset) => {
+            sunset.animate([{ opacity: 1 }, { opacity: 0 }], {
+                duration: 5000,
+                fill: "forwards",
+                easing: "linear",
+            });
+        });
+    };
+
     const night = document.querySelectorAll<HTMLElement>(".night");
     const day = document.querySelectorAll<HTMLElement>(".day");
     const sunset = document.querySelectorAll<HTMLElement>(".sunset");
