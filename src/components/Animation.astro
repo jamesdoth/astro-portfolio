@@ -9,6 +9,11 @@
     let animationSpeed = 1;
     let baseDuration = 10000;
     const animationDuration = baseDuration * animationSpeed;
+    const now = new Date();
+    const month = now.getMonth();
+    let sunriseSystem, sunsetSystem;
+    console.log("this is the date: " + now);
+    console.log("this is the month: " + month);
 
     const night = document.querySelectorAll<HTMLElement>(".night");
     const day = document.querySelectorAll<HTMLElement>(".day");
