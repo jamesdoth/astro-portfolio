@@ -48,6 +48,15 @@
     });
     console.log(`updatedSunrise: ${updatedSunrise}`);
 
+    const testSunsetDate = new Date(`January 1, 2000 ${sunsetSystem}`);
+    testSunsetDate.setMinutes(testSunsetDate.getMinutes() + 30);
+    const updatedSunset = testSunsetDate.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+    });
+    console.log(`updatedSunset: ${updatedSunset}`);
+
     //night to day starts at -15min sunrise to +15min sunrise
     //day to sunset starts -1hour sunset to sunset
     //sunset to night starts +15 sunset to +45 sunset
