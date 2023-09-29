@@ -39,6 +39,12 @@
         sunsetSystem = "5:00 PM";
     }
 
+    //night to day starts at -15min sunrise to +15min sunrise
+    //day to sunset starts -1hour sunset to sunset
+    //sunset to night starts +15 sunset to +45 sunset
+    if (currentTime >= sunriseSystem) {
+    }
+
     const animateNightToDay = () => {
         night.forEach((night) => {
             night.animate([{ opacity: 1 }, { opacity: 0 }], {
