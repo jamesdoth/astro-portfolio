@@ -21,15 +21,15 @@
     console.log("this is the month: " + month);
     console.log("currentTime test: " + currentTime);
 
-    if (month >= 3 && month <= 5) {
+    if (month >= 2 && month <= 4) {
         // Spring (March to May)
         sunriseSystem = "6:00 AM";
         sunsetSystem = "6:30 PM";
-    } else if (month >= 6 && month <= 8) {
+    } else if (month >= 5 && month <= 7) {
         // Summer (June to August)
         sunriseSystem = "5:00 AM";
         sunsetSystem = "8:00 PM";
-    } else if (month >= 9 && month <= 11) {
+    } else if (month >= 8 && month <= 10) {
         // Fall (September to November)
         sunriseSystem = "6:00 AM";
         sunsetSystem = "6:30 PM";
@@ -38,6 +38,15 @@
         sunriseSystem = "7:00 AM";
         sunsetSystem = "5:00 PM";
     }
+
+    const testSunriseDate = new Date(`January 1, 2000 ${sunriseSystem}`);
+    testSunriseDate.setMinutes(testSunriseDate.getMinutes() - 15);
+    const updatedSunrise = testSunriseDate.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+    });
+    console.log(`updatedSunrise: ${updatedSunrise}`);
 
     //night to day starts at -15min sunrise to +15min sunrise
     //day to sunset starts -1hour sunset to sunset
