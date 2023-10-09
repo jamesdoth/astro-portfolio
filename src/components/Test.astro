@@ -1,0 +1,47 @@
+---
+import { getImage } from "astro:assets";
+import grass from "../images/GRASS.png";
+import clouds from "../images/CLOUDS.png";
+
+const grassTile = await getImage({ src: grass, format: "avif" });
+const cloudsTile = await getImage({ src: clouds, format: "avif" });
+import Animation from "./Animation.astro";
+---
+
+<!-- <Animation /> -->
+<section class="h-[100vh] w-[100vw] mx-auto">
+    <!-- sun moon 1 -->
+    <div class="absolute h-screen w-screen flex justify-center items-center">
+        <div class="wrapper">
+            <div class="circle"></div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .circle {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    .yaxis {
+        /* Render dot */
+        animation: yAxis 2.5s infinite ease-out;
+    }
+
+    @keyframes xAxis {
+        50% {
+            animation-timing-function: ease-in;
+            transform: translateX(100px);
+        }
+    }
+
+    @keyframes yAxis {
+        50% {
+            animation-timing-function: ease-out;
+            transform: translateY(-200px);
+        }
+    }
+</style>
