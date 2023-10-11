@@ -1,6 +1,6 @@
 ---
 import MainHead from "./MainHead.astro";
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 
 const { title = "main page" } = Astro.props;
 ---
@@ -8,7 +8,16 @@ const { title = "main page" } = Astro.props;
 <html lang="en">
     <MainHead {title} />
     <body class="overflow-hidden bg-zinc-900">
-        <Navigation />
+        <Header />
         <slot />
+        <script>
+            document
+                .querySelector(".hamburger")
+                .addEventListener("click", () => {
+                    document
+                        .querySelector(".nav-links")
+                        .classList.toggle("expanded");
+                });
+        </script>
     </body>
 </html>
