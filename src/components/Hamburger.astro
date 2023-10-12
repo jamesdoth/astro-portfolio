@@ -9,6 +9,15 @@
         navLinks?.classList.toggle("hidden");
         console.log("hamburger clicked");
     });
+
+    document.addEventListener("click", (event) => {
+        if (
+            !btn?.contains(event.target as Node) &&
+            !navLinks?.contains(event.target as Node)
+        ) {
+            navLinks?.classList.add("hidden");
+        }
+    });
 </script>
 
 <div class="mr-12 md:hidden flex">
@@ -33,7 +42,7 @@
     </button>
 </div>
 
-<div class="nav-links absolute hidden top-[47%] w-screen my-7">
+<div class="nav-links absolute hidden md:hidden top-[47%] w-screen my-7">
     <ul
         class="font-medium flex flex-col items-center justify-center p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
     >
