@@ -3,26 +3,13 @@
 ---
 
 <script>
-    function toggleNavLinks() {
-        const navLinks = document.querySelector(".nav-links");
-
-        if (navLinks?.classList.contains("hidden")) {
-            // If "hidden" class is present, remove it to make the links visible
-            navLinks.classList.remove("hidden");
-        } else {
-            // If "hidden" class is not present, add it to hide the links
-            navLinks?.classList.add("hidden");
-        }
-    }
-
     const btn = document.querySelector(".hamburger");
     btn?.addEventListener("click", () => {
         console.log("hamburger clicked");
-        toggleNavLinks();
     });
 </script>
 
-<div class="mr-12">
+<div class="mr-12 flex">
     <button
         class="hamburger bg-gray-800 p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
     >
@@ -42,19 +29,20 @@
                 d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
     </button>
-    <div class="nav-links hidden w-full">
-        <ul
-            class="font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
-        >
-            <li>
-                <a href="/" class="text-xl text-white">Home</a>
-            </li>
-            <li>
-                <a href="/about/" class="text-xl text-white">About</a>
-            </li>
-            <li>
-                <a href="/blog/" class="text-xl text-white">Blog</a>
-            </li>
-        </ul>
-    </div>
+</div>
+
+<div class="nav-links absolute top-[47%] w-screen my-7">
+    <ul
+        class="font-medium flex flex-col items-center justify-center p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+    >
+        <li>
+            <a href="/" class="text-xl text-white">Home</a>
+        </li>
+        <li>
+            <a href="/about/" class="text-xl text-white">About</a>
+        </li>
+        <li>
+            <a href="/blog/" class="text-xl text-white">Work</a>
+        </li>
+    </ul>
 </div>
