@@ -18,6 +18,16 @@
             navLinks?.classList.add("hidden");
         }
     });
+
+    const hideNav = () => {
+        navLinks?.classList.add("hidden");
+    };
+    window.addEventListener("resize", () => {
+        const mdBreakpoint = window.matchMedia("(min-width: 768px)");
+        if (mdBreakpoint.matches) {
+            hideNav();
+        }
+    });
 </script>
 
 <div class="mr-12 md:hidden flex">
