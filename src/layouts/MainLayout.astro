@@ -2,11 +2,16 @@
 import MainHead from "./MainHead.astro";
 import Header from "../components/Header.astro";
 
-const { title = "main page" } = Astro.props;
+interface Props {
+    title?: string | undefined;
+    description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-    <MainHead {title} />
+    <MainHead title={title} description={description} />
     <body class="overflow-hidden bg-zinc-900">
         <Header />
         <slot />
