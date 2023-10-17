@@ -2,9 +2,25 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
 import Test from "../components/Test.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
-<MainLayout>
-    <Hero />
-    <!-- <Test /> -->
-</MainLayout>
+<Hero />
+
+<div class="absolute font-medium text-xl text-white mt-10">
+    <div class="w-screen">
+        <ul class="font-medium flex justify-center items-center gap-5">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            <li>
+                <a href="/work/">Work</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- <Test /> -->
