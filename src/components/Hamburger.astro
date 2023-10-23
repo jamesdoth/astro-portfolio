@@ -3,15 +3,20 @@
 ---
 
 <script>
-    const btn = document.querySelector(".hamburger");
+    // need htmlbuttonelement for blur() to work
+    const btn = document.querySelector(".hamburger") as HTMLButtonElement;
     const navLinks = document.querySelector(".nav-links");
     btn?.addEventListener("click", () => {
         navLinks?.classList.toggle("hidden");
+        if (navLinks?.classList.contains("hidden")) {
+            btn.blur();
+        }
         console.log("hamburger clicked");
     });
 
     const hideNav = () => {
         navLinks?.classList.add("hidden");
+        btn.blur();
     };
 
     document.addEventListener("click", (event) => {
@@ -33,7 +38,7 @@
 
 <div class="mr-12 md:hidden flex">
     <button
-        class="hamburger bg-gray-800 p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700"
+        class="hamburger bg-gray-800 p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:text-white focus:bg-gray-700"
     >
         <span class="sr-only">Menu</span>
         <svg
